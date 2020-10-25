@@ -117,18 +117,6 @@ li {
     padding: 70px 0;
 }
 
-.btn-pesan:link,
-.btn-pesan:visited{
-    background-color: #FF0000;
-    border-color: #FF0000;
-}
-
-a.btn.btn-primary.btn-pesan:hover,
-a.btn.btn-primary.btn-pesan:active{
-    background-color: #FF0000;
-    border-color: #FF0000;
-}
-
 /* Menu */
 .daftar-menu{
     font-weight: 700;
@@ -164,6 +152,18 @@ a.btn.btn-primary.btn-pesan:active{
 .deskripsi {
     font-weight: 400;
     font-size: 16px;
+}
+
+.btn-pesan:link,
+.btn-pesan:visited{
+    background-color: #FF0000;
+    border-color: #FF0000;
+}
+
+a.btn.btn-primary.btn-pesan:hover,
+a.btn.btn-primary.btn-pesan:active{
+    background-color: #FF0000;
+    border-color: #FF0000;
 }
 
 /* Footer */
