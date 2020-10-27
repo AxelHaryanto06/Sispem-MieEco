@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Foundation\Auth\AuthenticatesAdmin;
 
 class AdminLoginController extends Controller
 {
@@ -18,14 +18,14 @@ class AdminLoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesAdmin;
 
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.

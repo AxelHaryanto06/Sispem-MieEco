@@ -15,8 +15,20 @@ Route::get('/', function () {
     return view('home');
 });
 
+Auth::routes();
+
 Route::view('user/menu', 'menu');
 Route::get('user/menu', 'MenuController@index');
 Route::view('user/contact', 'contact');
 Route::view('login', 'login');
 Route::view('register', 'register');
+
+Route::group(['middleware' => ['auth','admin']], function() {
+    Route::get('/admin', function () {
+        return view('welcome');
+        });
+    Route::get('/admin/dashboard', 'DashboardController@index')->name('dashboard');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

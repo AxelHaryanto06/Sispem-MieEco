@@ -166,6 +166,9 @@ a.btn.btn-primary.btn-pesan:active{
     border-color: #FF0000;
 }
 
+p{
+    margin-bottom: auto;
+}
 /* Footer */
 .footer{
     background-color: #FEC921;
