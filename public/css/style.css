@@ -54,6 +54,10 @@ li {
     font-size: 16px!important;
 }
 
+.linkakun{
+    display: inline-block;
+}
+
 .header-right {
     float: right;
 }

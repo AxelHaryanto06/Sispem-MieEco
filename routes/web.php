@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/logout', function () {
+    Auth::logout();
+
+    return redirect('/');
+});
+
 Auth::routes();
 
 Route::view('user/menu', 'menu');

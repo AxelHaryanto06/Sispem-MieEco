@@ -62,7 +62,7 @@
                     </div>
                     <div>
                         <i class="fas fa-map-marker-alt fas-hidden"></i>
-                        No. 232
+                        No. 232 A
                     </div>
                     <div>
                         <i class="fas fa-map-marker-alt fas-hidden"></i>
