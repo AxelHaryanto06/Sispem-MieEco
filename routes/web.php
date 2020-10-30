@@ -34,6 +34,12 @@ Route::group(['middleware' => ['auth','admin']], function() {
         return view('welcome');
         });
     Route::get('/admin/dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('/admin/daftarmenu', 'MenuController@adminindex');
+    Route::get('/admin/daftarmenu/edit/{id}', 'MenuController@adminindexedit');    
+    Route::get('/admin/daftarmenu/tambah', 'MenuController@adminindextambah');
+    Route::post('/admin/daftarmenu/tambahmenu', 'MenuController@adminindexstore')->name('tambahmenu');
+    Route::put('/admin/daftarmenu/update/{id}', 'MenuController@adminindexupdate');
+    Route::get('/admin/daftarmenu/hapus/{id}', 'MenuController@adminindexhapus');
 });
 Auth::routes();
 
