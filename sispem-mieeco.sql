@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2020 at 05:14 PM
+-- Generation Time: Oct 30, 2020 at 07:41 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -74,9 +74,12 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `nama_menu`, `gambar`, `deskripsi`, `harga`, `created_at`, `updated_at`) VALUES
-(1, 'Mie Komplit', 'Mie-Komplit.jpg', 'Mie + Ati Ampela + Telor Kecap + Bakso + Pangsit', '18000', '2020-10-25 05:56:08', '2020-10-25 05:56:08'),
+(1, 'Mie Komplit', '1604063025.jpg', 'Mie + Ati Ampela + Telor Kecap + Bakso + Pangsit', '18000', '2020-10-25 05:56:08', '2020-10-30 06:04:36'),
 (2, 'Mie Pangsit Eco', 'mie-pangsit.jpg', 'Mie + Ati Ampela + Telor Kecap + Pangsit', '15000', '2020-10-25 05:56:43', '2020-10-25 05:56:43'),
-(3, 'Mie Bakso Eco', 'mie-bakso.jpg', 'Mie + Ati Ampela + Telor Kecap + Bakso', '16000', '2020-10-25 06:31:48', '2020-10-25 06:31:49');
+(3, 'Mie Bakso Eco', 'mie-bakso.jpg', 'Mie + Ati Ampela + Telor Kecap + Bakso', '16000', '2020-10-25 06:31:48', '2020-10-25 06:31:49'),
+(22, 'Es Teh Manis', '1604081653.jpeg', 'Teh + Gula + Es', '3000', '2020-10-30 11:14:13', '2020-10-30 11:14:13'),
+(23, 'Es Jeruk', '1604081969.jpg', 'Jeruk Peras + Gula + Es', '7000', '2020-10-30 11:19:29', '2020-10-30 11:19:29'),
+(24, 'Air Mineral Botol', '1604082282.jpg', 'Air Mineral Botol', '3000', '2020-10-30 11:24:42', '2020-10-30 11:24:42');
 
 -- --------------------------------------------------------
 
@@ -149,6 +152,7 @@ CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tgl_lahir` date DEFAULT NULL,
@@ -164,9 +168,13 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `tgl_lahir`, `jenkel`, `alamat`, `no_hp`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Axel', 'axel@gmail.com', '2020-10-19 19:37:55', '123456', '1998-10-06', 'Laki-Laki', 'Puri Indah K-42', '0821289289389', NULL, NULL, NULL),
-(2, 'Axel', 'axelh@gmail.com', NULL, '$2y$10$SOoT/ZXsz76gs4gez0r/YO2Vi939P49T/fS0Icim6kON1CgJUCcDO', NULL, NULL, NULL, NULL, NULL, '2020-10-20 10:21:58', '2020-10-20 10:21:58');
+INSERT INTO `users` (`id`, `name`, `email`, `role`, `email_verified_at`, `password`, `tgl_lahir`, `jenkel`, `alamat`, `no_hp`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Axel', 'axel@gmail.com', 'user', '2020-10-19 19:37:55', '123456', '1998-10-06', 'Laki-Laki', 'Puri Indah K-42', '0821289289389', NULL, NULL, NULL),
+(2, 'Axel', 'axelh@gmail.com', 'user', NULL, '$2y$10$SOoT/ZXsz76gs4gez0r/YO2Vi939P49T/fS0Icim6kON1CgJUCcDO', NULL, NULL, NULL, NULL, NULL, '2020-10-20 10:21:58', '2020-10-20 10:21:58'),
+(3, 'admin', 'admin@mieeco.com', 'admin', NULL, '$2y$10$SnBxHRWKZJE.xUcrj4NR1u.6kfHiKqAvJkSM/m.1ouZM2MOztT6rC', NULL, NULL, NULL, NULL, NULL, '2020-10-26 08:02:29', '2020-10-26 08:02:29'),
+(4, 'adriel', 'adriel@gmail.com', 'user', NULL, '$2y$10$wiCKHRSzfPV36/620Eo8mu9IUSbV0GileHvPwzXBXOnSOz./95oY.', NULL, NULL, NULL, NULL, NULL, '2020-10-26 10:54:36', '2020-10-26 10:54:36'),
+(5, 'agus', 'agus@gmail.com', NULL, NULL, '$2y$10$XBHUSU03ll4ilLNeGPV/QO9/l4.4Pi3yhhfkgyMkhMrlOVrEe8o8K', NULL, NULL, NULL, NULL, NULL, '2020-10-28 00:56:53', '2020-10-28 00:56:53'),
+(6, 'dewi', 'dewi@gmail.com', NULL, NULL, '$2y$10$slhT5LThoEtI6Oxl2LZBu.gzBbj7X1nUHtUIQAPe2be.ERW1yBLkG', NULL, NULL, NULL, NULL, NULL, '2020-10-28 01:36:07', '2020-10-28 01:36:07');
 
 --
 -- Indexes for dumped tables
@@ -242,7 +250,7 @@ ALTER TABLE `detail_pesanans`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -266,7 +274,7 @@ ALTER TABLE `tbl_role`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
