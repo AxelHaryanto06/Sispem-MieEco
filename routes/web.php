@@ -43,4 +43,6 @@ Route::group(['middleware' => ['auth','admin']], function() {
 });
 Auth::routes();
 
+Route::get('user/menu/pesan/{id}', 'PesanController@index');
+Route::post('user/menu/pesan/{id}', 'PesanController@pesan');
 Route::get('/home', 'HomeController@index')->name('home');

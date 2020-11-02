@@ -173,6 +173,33 @@ a.btn.btn-primary.btn-pesan:active{
 p{
     margin-bottom: auto;
 }
+
+/* Menu - Pesan */
+button.btn.btn-primary.btn-custom {
+    color: white;
+    background-color: #FF0000;
+    border-color:  #FF0000;
+}
+
+.btn-custom:hover,
+.btn-custom:active{
+    color: #fff;
+    background-color: #FF0000;
+    border-color: #FF0000;
+}
+
+.judulmenu{
+    font-weight: 500;
+}
+
+.product-card{
+    margin-top: 1.25rem;
+}
+
+ol.breadcrumb{
+    background-color: white;
+    padding-bottom: 0;
+}
 /* Footer */
 .footer{
     background-color: #FEC921;

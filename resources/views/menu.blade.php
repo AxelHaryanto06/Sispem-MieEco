@@ -14,7 +14,7 @@
         <div class="container">
             <div class="row">
                 @foreach($menu as $m)
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-4">
                         <div class="card m-card">
                             <figure class="gambar-menu">
                                 <img src="{{ url('img') }}/{{ $m->gambar }}" class="card-img-top card-gambar" alt="...">
@@ -24,7 +24,7 @@
                             <p class="card-text">
                                 <strong class="harga">Harga :</strong> Rp. {{ number_format($m->harga) }} <br>
                             </p>
-                            <a href="#" class="btn btn-primary btn-pesan">Pesan</a>
+                            <a href="{{ url('user/menu/pesan') }}/{{ $m->id }}" class="btn btn-primary btn-pesan">Pesan</a>
                         </div>
                         </div>
                     </div>
