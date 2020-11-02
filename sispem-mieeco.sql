@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2020 at 07:41 PM
+-- Generation Time: Nov 02, 2020 at 06:18 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -48,10 +48,20 @@ CREATE TABLE `detail_pesanans` (
   `id_menu` int(11) NOT NULL,
   `id_pesanan` int(11) NOT NULL,
   `jumlah` int(11) NOT NULL,
+  `catatan` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jml_harga` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `detail_pesanans`
+--
+
+INSERT INTO `detail_pesanans` (`id`, `id_menu`, `id_pesanan`, `jumlah`, `catatan`, `jml_harga`, `created_at`, `updated_at`) VALUES
+(4, 2, 3, 4, 'asin', 60000, '2020-11-02 10:08:05', '2020-11-02 10:08:05'),
+(5, 2, 3, 1, 'bungkus, pedas', 15000, '2020-11-02 10:08:47', '2020-11-02 10:08:47'),
+(6, 22, 3, 2, '1 gula sedikit', 6000, '2020-11-02 10:09:54', '2020-11-02 10:09:54');
 
 -- --------------------------------------------------------
 
@@ -102,7 +112,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2020_10_19_180341_create_pesanans_table', 1),
 (4, '2020_10_19_181224_create_detail_pesanans_table', 1),
-(5, '2020_10_20_173659_create_admins_table', 2);
+(5, '2020_10_20_173659_create_admins_table', 2),
+(7, '2020_11_02_075934_add_catatan_to_pesanans_table', 3);
 
 -- --------------------------------------------------------
 
@@ -126,10 +137,18 @@ CREATE TABLE `pesanans` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `id_user` int(11) NOT NULL,
   `tanggal` date NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `total` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `pesanans`
+--
+
+INSERT INTO `pesanans` (`id`, `id_user`, `tanggal`, `status`, `total`, `created_at`, `updated_at`) VALUES
+(3, 2, '2020-11-02', '0', 81000, '2020-11-02 10:08:05', '2020-11-02 10:09:54');
 
 -- --------------------------------------------------------
 
@@ -244,7 +263,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `detail_pesanans`
 --
 ALTER TABLE `detail_pesanans`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -256,13 +275,13 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `pesanans`
 --
 ALTER TABLE `pesanans`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_role`
