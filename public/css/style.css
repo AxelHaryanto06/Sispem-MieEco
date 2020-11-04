@@ -73,8 +73,7 @@ li {
     display: inline-block;
     font-weight: 500;
     text-decoration: none;
-    border-radius: 50px;
-    color: #fff;
+    border-radius: 50px;   
     transition: background-color 0.2s, border 0.2s, color 0.2s;
 }
 
@@ -82,6 +81,104 @@ li {
 .btn-register:visited{
     border: 2px solid #FF0000;
     color: #FF0000;
+}
+
+/* Login */
+.css-1{
+    display: flex;
+}
+
+.box-left{
+    background-color: #FEC921;
+    display: inline-grid;
+    place-items: center;
+    margin: 0;
+}
+
+.image-left{
+    width: 633px;
+}
+
+.image-right{
+    width: 733px;
+}
+
+.css-2{
+    padding: 2.5rem 2rem;
+}
+
+.image-geser{
+    margin-left: 80px;
+}
+
+.gambar-login{
+    margin-top: 68px;
+}
+
+.tulisan-login{
+    font-weight: 700;
+    font-size: 44px;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.form-size{
+    width: 432px;
+}
+
+.perintah{
+    font-weight: 500;
+}
+
+.login-position{
+    margin-left: 144px;
+    margin-top: 37px;
+}
+
+.check-login-position{
+    margin-left: 144px;
+}
+
+.btn-submit{
+    width: 432px;
+    margin-left: 144px;
+}
+
+button.btn.btn-primary.btn-submit{
+    background-color: #FF0000;
+    border-color: #FF0000;
+}
+
+.btn-forgot{
+    color: #FF0000;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.btn-forgot:link,
+.btn-forgot:visited{
+    color: #FF0000;
+}
+
+a.btn.btn-link.btn-forgot {
+    font-weight: 500;
+    width: auto;
+}
+
+.text-forgot{
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 24px;
+}
+
+.linktoregister{
+    color: #FF0000;
+}
+
+.belumpunya{
+    font-weight: 500;
+    text-align: center;
+    margin-left: 52px;
 }
 
 /* Home */
