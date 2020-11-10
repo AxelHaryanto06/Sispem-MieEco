@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2020 at 06:18 PM
+-- Generation Time: Nov 10, 2020 at 05:54 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -61,7 +61,8 @@ CREATE TABLE `detail_pesanans` (
 INSERT INTO `detail_pesanans` (`id`, `id_menu`, `id_pesanan`, `jumlah`, `catatan`, `jml_harga`, `created_at`, `updated_at`) VALUES
 (4, 2, 3, 4, 'asin', 60000, '2020-11-02 10:08:05', '2020-11-02 10:08:05'),
 (5, 2, 3, 1, 'bungkus, pedas', 15000, '2020-11-02 10:08:47', '2020-11-02 10:08:47'),
-(6, 22, 3, 2, '1 gula sedikit', 6000, '2020-11-02 10:09:54', '2020-11-02 10:09:54');
+(6, 22, 3, 2, '1 gula sedikit', 6000, '2020-11-02 10:09:54', '2020-11-02 10:09:54'),
+(7, 1, 3, 2, 'pedas', 36000, '2020-11-04 18:05:52', '2020-11-04 18:05:52');
 
 -- --------------------------------------------------------
 
@@ -148,7 +149,7 @@ CREATE TABLE `pesanans` (
 --
 
 INSERT INTO `pesanans` (`id`, `id_user`, `tanggal`, `status`, `total`, `created_at`, `updated_at`) VALUES
-(3, 2, '2020-11-02', '0', 81000, '2020-11-02 10:08:05', '2020-11-02 10:09:54');
+(3, 2, '2020-11-02', '0', 117000, '2020-11-02 10:08:05', '2020-11-04 18:05:52');
 
 -- --------------------------------------------------------
 
@@ -193,7 +194,14 @@ INSERT INTO `users` (`id`, `name`, `email`, `role`, `email_verified_at`, `passwo
 (3, 'admin', 'admin@mieeco.com', 'admin', NULL, '$2y$10$SnBxHRWKZJE.xUcrj4NR1u.6kfHiKqAvJkSM/m.1ouZM2MOztT6rC', NULL, NULL, NULL, NULL, NULL, '2020-10-26 08:02:29', '2020-10-26 08:02:29'),
 (4, 'adriel', 'adriel@gmail.com', 'user', NULL, '$2y$10$wiCKHRSzfPV36/620Eo8mu9IUSbV0GileHvPwzXBXOnSOz./95oY.', NULL, NULL, NULL, NULL, NULL, '2020-10-26 10:54:36', '2020-10-26 10:54:36'),
 (5, 'agus', 'agus@gmail.com', NULL, NULL, '$2y$10$XBHUSU03ll4ilLNeGPV/QO9/l4.4Pi3yhhfkgyMkhMrlOVrEe8o8K', NULL, NULL, NULL, NULL, NULL, '2020-10-28 00:56:53', '2020-10-28 00:56:53'),
-(6, 'dewi', 'dewi@gmail.com', NULL, NULL, '$2y$10$slhT5LThoEtI6Oxl2LZBu.gzBbj7X1nUHtUIQAPe2be.ERW1yBLkG', NULL, NULL, NULL, NULL, NULL, '2020-10-28 01:36:07', '2020-10-28 01:36:07');
+(6, 'dewi', 'dewi@gmail.com', NULL, NULL, '$2y$10$slhT5LThoEtI6Oxl2LZBu.gzBbj7X1nUHtUIQAPe2be.ERW1yBLkG', NULL, NULL, NULL, NULL, NULL, '2020-10-28 01:36:07', '2020-10-28 01:36:07'),
+(7, 'dono', 'dono@gmail.com', NULL, NULL, '$2y$10$w50TVgIHsPS3HysyVfzqO.jFtduGyvhUs14fs9SsexQY57yB27AxO', NULL, NULL, NULL, NULL, NULL, '2020-11-04 11:27:23', '2020-11-04 11:27:23'),
+(8, 'kezia', 'kezia@gmail.com', NULL, NULL, '$2y$10$.YyMABYtvsX788uSJ23TLuBpgPOblosEn2/qn3MWOoGdoCMs8d24e', NULL, NULL, NULL, NULL, NULL, '2020-11-09 04:04:21', '2020-11-09 04:04:21'),
+(9, 'unyu', 'unyu@gmail.com', NULL, NULL, '$2y$10$2M75e6MHoHZJ46KfM0GdfOq8RUqvDJyt0yxccyzIoZl0iwonVgNPq', NULL, NULL, NULL, NULL, NULL, '2020-11-10 07:42:08', '2020-11-10 07:42:08'),
+(10, 'unyuin', 'unyuin@gmail.com', NULL, NULL, '$2y$10$BCZLCXjlXVvy/MQSk.fLTOoTlbyF61UqNRE9bUAoETfqGgWzPJA92', NULL, NULL, NULL, '082147547747', NULL, '2020-11-10 07:46:37', '2020-11-10 07:46:37'),
+(11, 'unyu2', 'unyu2@gmail.com', NULL, NULL, '$2y$10$loMKAUgAsJP4HP/Y/nTNUuG1neFS0ElkTsNEhAWSO6yM2AaWkCrVO', NULL, 'Laki - Laki', NULL, '038493849334', NULL, '2020-11-10 08:59:36', '2020-11-10 08:59:36'),
+(12, 'unyu3', 'unyu3@gmail.com', NULL, NULL, '$2y$10$0Xx81o4IeudfMEzuZ0TCMujSG/muphwwQXlBmgnqCs9vkSigmNe96', NULL, 'Perempuan', NULL, '0839843433', NULL, '2020-11-10 09:00:39', '2020-11-10 09:00:39'),
+(13, 'jimny', 'jimny@gmail.com', NULL, NULL, '$2y$10$xYHZqW9sgxtZX0et5uj2puz7uRaXn1HTtL.84DhC0rg.6AR6nWIam', NULL, 'Laki - Laki', NULL, '04484843742', NULL, '2020-11-10 09:31:58', '2020-11-10 09:31:58');
 
 --
 -- Indexes for dumped tables
@@ -263,13 +271,13 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `detail_pesanans`
 --
 ALTER TABLE `detail_pesanans`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -293,7 +301,7 @@ ALTER TABLE `tbl_role`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
