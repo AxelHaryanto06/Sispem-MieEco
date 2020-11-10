@@ -12,7 +12,7 @@
             </div>
             <div class="box-body">
                 <form action="{{ route('tambahmenu') }}" method="POST" enctype="multipart/form-data">
-                {{ csrf_field() }}
+                {{ csrf_field() }}                                              
                 <div class="box-body">
                     <div class="form-group">
                         <label>Nama</label>

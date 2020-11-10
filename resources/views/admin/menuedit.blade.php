@@ -22,7 +22,7 @@
                             <div class="form-group">
                                 <label>Nama</label>
                                 <input type="text" name="username" value="{{ $menu->nama_menu }}" class="form-control">  
-                            </div>
+                            </div>                            
                             
                             <div class="form-group">
                                 <label>Gambar</label>

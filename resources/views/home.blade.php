@@ -21,7 +21,7 @@
             </div>            
         </div>
     </section>
-    <section class="bagian-foto">
+    <section class="bagian-foto" align="center">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-6">
