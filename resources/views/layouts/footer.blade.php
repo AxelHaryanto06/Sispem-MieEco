@@ -32,13 +32,13 @@
                         <a href="https://www.instagram.com/mieecopurwokerto/" class="medsos" target="_blank">
                             <div>
                                 <i class="fab fa-instagram"></i>
-                                @mieecopurwokerto
+                                Instagram
                             </div>                                                        
                         </a>                        
                         <a href="#" class="medsos">
                             <div class="facebook">
                                 <i class="fab fa-facebook-f"></i>
-                                Mie Eco Purwokerto
+                                Facebook
                             </div>                                                        
                         </a>                        
                 </div>

@@ -31,7 +31,7 @@
 
         <div class="form-group login-position">
             <label class="perintah">Email</label>                    
-            <input id="email" type="email" class="form-control form-size @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+            <input id="email" type="email" class="form-control form-size @error('email') is-invalid @enderror" name="email" placeholder="Email Lengkap Anda" value="{{ old('email') }}" required autocomplete="email" autofocus>
             @error('email')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -41,7 +41,7 @@
 
         <div class="form-group login-position">
             <label class="perintah">Password</label>                            
-            <input id="password" type="password" class="form-control form-size @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+            <input id="password" type="password" class="form-control form-size @error('password') is-invalid @enderror" name="password" placeholder="Masukkan Password Anda" required autocomplete="current-password">
             @error('password')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

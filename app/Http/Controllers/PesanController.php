@@ -8,6 +8,7 @@ use App\Pesanan;
 use App\DetailPesanan;
 use Carbon\Carbon;
 use Auth;
+use Alert;
 
 class PesanController extends Controller
 {
@@ -58,6 +59,6 @@ class PesanController extends Controller
         $pesanan->total = $pesanan->total+$menu->harga*$request->jumlah_pesan;
         $pesanan->update(); 
 
-        return redirect('user/menu');
+        return redirect('user/menu')->with('success', 'Pesanan Berhasil Masuk Keranjang');
     }    
 }

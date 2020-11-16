@@ -17,6 +17,7 @@
     @include('layouts.navigation')
     @yield('content')
     @include('layouts.footer')
+    @include('sweetalert::alert')
 </body>
 </html>
 </body>
