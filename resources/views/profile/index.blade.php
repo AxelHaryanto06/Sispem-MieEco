@@ -36,13 +36,13 @@
 
                     <div class="col-md-6 pilih-jenkel">
                         <div class="form-check pilihan">
-                            <input class="form-check-input" type="radio" name="jenkel" id="jenkel" value="Laki - Laki" checked>
+                            <input class="form-check-input" type="radio" name="jenkel" id="jenkel" value="Laki - Laki" <?php if($user->jenkel =='Laki - Laki') echo 'checked'?>>
                             <label class="form-check-label" for="jenkel">
                               Laki - Laki
                             </label>
                         </div>
                         <div class="form-check pilihan">
-                            <input class="form-check-input" type="radio" name="jenkel" id="jenkel" value="Perempuan" checked>
+                            <input class="form-check-input" type="radio" name="jenkel" id="jenkel" value="Perempuan" <?php if($user->jenkel =='Perempuan') echo 'checked'?>>
                             <label class="form-check-label" for="jenkel">
                               Perempuan
                             </label>

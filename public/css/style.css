@@ -405,7 +405,12 @@ button.btn.btn-simpan{
     border-color: #FF0000;
 }
 
-
+.btn-simpan:hover,
+.btn-simpan:active{
+    color: #fff;
+    background-color: #FF0000;
+    border-color: #FF0000;
+}
 
 /* Cart */
 .cart-page-menu{
