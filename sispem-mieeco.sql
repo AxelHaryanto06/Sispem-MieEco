@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2020 at 05:54 PM
+-- Generation Time: Nov 28, 2020 at 03:32 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -60,9 +60,13 @@ CREATE TABLE `detail_pesanans` (
 
 INSERT INTO `detail_pesanans` (`id`, `id_menu`, `id_pesanan`, `jumlah`, `catatan`, `jml_harga`, `created_at`, `updated_at`) VALUES
 (4, 2, 3, 4, 'asin', 60000, '2020-11-02 10:08:05', '2020-11-02 10:08:05'),
-(5, 2, 3, 1, 'bungkus, pedas', 15000, '2020-11-02 10:08:47', '2020-11-02 10:08:47'),
-(6, 22, 3, 2, '1 gula sedikit', 6000, '2020-11-02 10:09:54', '2020-11-02 10:09:54'),
-(7, 1, 3, 2, 'pedas', 36000, '2020-11-04 18:05:52', '2020-11-04 18:05:52');
+(7, 1, 3, 2, 'pedas', 36000, '2020-11-04 18:05:52', '2020-11-04 18:05:52'),
+(8, 23, 4, 1, NULL, 7000, '2020-11-15 12:11:14', '2020-11-15 12:11:14'),
+(9, 22, 4, 1, 'ice less', 3000, '2020-11-16 00:38:17', '2020-11-16 00:38:17'),
+(10, 2, 5, 2, NULL, 30000, '2020-11-16 06:41:30', '2020-11-16 06:41:30'),
+(11, 3, 5, 1, NULL, 16000, '2020-11-16 06:56:39', '2020-11-16 06:56:39'),
+(37, 3, 6, 2, NULL, 32000, '2020-11-25 07:16:06', '2020-11-25 07:16:06'),
+(39, 24, 7, 1, NULL, 3000, '2020-11-25 08:59:06', '2020-11-25 08:59:06');
 
 -- --------------------------------------------------------
 
@@ -149,7 +153,11 @@ CREATE TABLE `pesanans` (
 --
 
 INSERT INTO `pesanans` (`id`, `id_user`, `tanggal`, `status`, `total`, `created_at`, `updated_at`) VALUES
-(3, 2, '2020-11-02', '0', 117000, '2020-11-02 10:08:05', '2020-11-04 18:05:52');
+(3, 2, '2020-11-02', '1', 96000, '2020-11-02 10:08:05', '2020-11-25 07:06:37'),
+(4, 5, '2020-11-15', '0', 10000, '2020-11-15 12:11:14', '2020-11-16 00:38:17'),
+(5, 4, '2020-11-16', '0', 46000, '2020-11-16 06:41:30', '2020-11-16 06:56:39'),
+(6, 2, '2020-11-25', '1', 32000, '2020-11-25 07:16:05', '2020-11-25 08:37:50'),
+(7, 2, '2020-11-25', '0', 3000, '2020-11-25 08:38:33', '2020-11-25 08:59:06');
 
 -- --------------------------------------------------------
 
@@ -201,7 +209,10 @@ INSERT INTO `users` (`id`, `name`, `email`, `role`, `email_verified_at`, `passwo
 (10, 'unyuin', 'unyuin@gmail.com', NULL, NULL, '$2y$10$BCZLCXjlXVvy/MQSk.fLTOoTlbyF61UqNRE9bUAoETfqGgWzPJA92', NULL, NULL, NULL, '082147547747', NULL, '2020-11-10 07:46:37', '2020-11-10 07:46:37'),
 (11, 'unyu2', 'unyu2@gmail.com', NULL, NULL, '$2y$10$loMKAUgAsJP4HP/Y/nTNUuG1neFS0ElkTsNEhAWSO6yM2AaWkCrVO', NULL, 'Laki - Laki', NULL, '038493849334', NULL, '2020-11-10 08:59:36', '2020-11-10 08:59:36'),
 (12, 'unyu3', 'unyu3@gmail.com', NULL, NULL, '$2y$10$0Xx81o4IeudfMEzuZ0TCMujSG/muphwwQXlBmgnqCs9vkSigmNe96', NULL, 'Perempuan', NULL, '0839843433', NULL, '2020-11-10 09:00:39', '2020-11-10 09:00:39'),
-(13, 'jimny', 'jimny@gmail.com', NULL, NULL, '$2y$10$xYHZqW9sgxtZX0et5uj2puz7uRaXn1HTtL.84DhC0rg.6AR6nWIam', NULL, 'Laki - Laki', NULL, '04484843742', NULL, '2020-11-10 09:31:58', '2020-11-10 09:31:58');
+(13, 'jimny', 'jimny@gmail.com', NULL, NULL, '$2y$10$xYHZqW9sgxtZX0et5uj2puz7uRaXn1HTtL.84DhC0rg.6AR6nWIam', NULL, 'Laki - Laki', NULL, '04484843742', NULL, '2020-11-10 09:31:58', '2020-11-10 09:31:58'),
+(14, 'aman', 'aman@gmail.com', NULL, NULL, '$2y$10$U/2hqmgXpJVvJzedvKKosO./lZTCld3xnMLsncPT66/OMIbxYbtt.', NULL, 'Laki - Laki', NULL, '0989489343', NULL, '2020-11-11 03:22:10', '2020-11-11 03:22:10'),
+(15, 'aman1', 'aman1@gmail.com', NULL, NULL, '$2y$10$3SZ5cSCiW1dsV4lTw8QN7eebqNVplvjWsGhm725mZAxx6Isq2iPs6', NULL, 'Laki - Laki', NULL, '08984599898', NULL, '2020-11-11 03:33:42', '2020-11-11 03:33:42'),
+(16, 'user', 'user@gmail.com', NULL, NULL, '$2y$10$ekQ9XuWno3PBHjh.cM/TPe7rueSRY4eVixljQzjPYUhUkQMomaXEG', '1999-10-06', 'Laki - Laki', NULL, '03984984349', NULL, '2020-11-11 03:45:38', '2020-11-11 03:45:38');
 
 --
 -- Indexes for dumped tables
@@ -271,7 +282,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `detail_pesanans`
 --
 ALTER TABLE `detail_pesanans`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -289,7 +300,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `pesanans`
 --
 ALTER TABLE `pesanans`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_role`
@@ -301,7 +312,7 @@ ALTER TABLE `tbl_role`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
