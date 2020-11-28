@@ -375,6 +375,39 @@ ol.breadcrumb{
     padding-bottom: 0;
     margin-bottom: 0;
 }
+
+/* Profile */
+.profil-saya-header{
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* Cart */
+.cart-page-menu{
+    width: 46.27949%;;
+}
+
+.cart-page-namamenu{
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+.cart-page-catatan{
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+.btn-cart{
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 20px;
+}
+
+a.btn.btn-success.btn-cart{
+    font-size: 14px;
+    width: 100%;
+}
 /* Footer */
 .footer{
     background-color: #FEC921;

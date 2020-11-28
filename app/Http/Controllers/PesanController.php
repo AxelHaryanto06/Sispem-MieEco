@@ -58,7 +58,42 @@ class PesanController extends Controller
         $pesanan = Pesanan::where('id_user', Auth::user()->id)->where('status', 0)->first();
         $pesanan->total = $pesanan->total+$menu->harga*$request->jumlah_pesan;
         $pesanan->update(); 
+        
+        alert()->success('Sukses','Pesanan Berhasil Masuk Keranjang');
+        return redirect('user/menu');
+    }
+    
+    public function cart()
+    {
+        $pesanan = Pesanan::where('id_user', Auth::user()->id)->where('status', 0)->first();
+        if (!empty($pesanan)) {            
+            $detail_pesanans = DetailPesanan::where('id_pesanan', $pesanan->id)->get();
+        }
 
-        return redirect('user/menu')->with('success', 'Pesanan Berhasil Masuk Keranjang');
-    }    
+        return view('pesan.cart', compact('pesanan', 'detail_pesanans'));
+    }
+
+    public function hapus($id)
+    {
+        $detail_pesanan = DetailPesanan::where('id', $id)->first();
+
+        $pesanan = Pesanan::where('id', $detail_pesanan->id_pesanan)->first();
+        $pesanan->total = $pesanan->total-$detail_pesanan->jml_harga;
+        $pesanan->update();
+
+        $detail_pesanan->delete();
+
+        alert()->error('Hapus','Pesanan Berhasil Dihapus');
+        return redirect('cart');
+    }
+
+    public function checkout()
+    {
+        $pesanan = Pesanan::where('id_user', Auth::user()->id)->where('status', 0)->first();
+        $pesanan->status = 1;
+        $pesanan->update();
+
+        alert()->success('Sukses','Checkout Berhasil');
+        return redirect('cart');
+    }
 }

@@ -45,4 +45,10 @@ Auth::routes();
 
 Route::get('user/menu/pesan/{id}', 'PesanController@index');
 Route::post('user/menu/pesan/{id}', 'PesanController@pesan');
+Route::get('cart', 'PesanController@cart');
+Route::delete('cart/{id}', 'PesanController@hapus');
+Route::get('check-out', 'PesanController@checkout');
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('profile', 'ProfileController@index');
