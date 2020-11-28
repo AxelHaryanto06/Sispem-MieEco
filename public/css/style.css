@@ -378,10 +378,34 @@ ol.breadcrumb{
 
 /* Profile */
 .profil-saya-header{
+    padding-top: 20px;
+}
+
+.profil-saya-header-title{
     font-weight: 600;
     font-size: 20px;
     margin-top: 20px;
 }
+
+.profil-saya-header-sub{
+    margin-top: 3px;
+}
+
+.profil-saya-main{
+    margin-top: 20px;
+}
+
+.line-color{
+    color: rgba(0,0,0,.38);
+}
+
+button.btn.btn-simpan{
+    color: #fff;
+    background-color: #FF0000;
+    border-color: #FF0000;
+}
+
+
 
 /* Cart */
 .cart-page-menu{

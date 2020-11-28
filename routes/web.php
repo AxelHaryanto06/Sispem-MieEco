@@ -52,3 +52,4 @@ Route::get('check-out', 'PesanController@checkout');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('profile', 'ProfileController@index');
+Route::put('/profile/{id}', 'ProfileController@update');
