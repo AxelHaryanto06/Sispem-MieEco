@@ -53,3 +53,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('profile', 'ProfileController@index');
 Route::put('/profile/{id}', 'ProfileController@update');
+
+Route::get('history', 'HistoryController@index');
+Route::get('history/{id}', 'HistoryController@detail');
