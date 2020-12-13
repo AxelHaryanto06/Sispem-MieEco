@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Menu;
 use App\Pesanan;
 use App\DetailPesanan;
+use App\User;
 use Carbon\Carbon;
 use Auth;
 use Alert;
@@ -95,5 +96,12 @@ class PesanController extends Controller
 
         alert()->success('Sukses','Checkout Berhasil');
         return redirect('cart');
+    }
+
+    public function adminindex()
+    {
+        $pesanan = Pesanan::all();
+      
+        return view('admin.pesan', compact('pesanan'));
     }
 }

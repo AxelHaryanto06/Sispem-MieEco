@@ -22,17 +22,6 @@
     
 
     <!-- Main content -->
-    <section class="content">
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="pull-right">
-            
-          </div>
-        </div>
-      </div>
-
-      
       @yield('content')
 
       <!-- modal hapus -->

@@ -437,6 +437,12 @@ a.btn.btn-success.btn-cart{
     font-size: 14px;
     width: 100%;
 }
+
+/* Pesan - Admin */
+.pesan-judul {
+    padding-left: 8px;
+}
+
 /* Footer */
 .footer{
     background-color: #FEC921;

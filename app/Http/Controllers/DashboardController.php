@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Menu;
 
 class DashboardController extends Controller
 {
@@ -24,6 +26,8 @@ class DashboardController extends Controller
     public function index()
     {
         $title = "Dashboard Admin";
-        return view('admin.dashboard',compact('title'));
+        $total_menu = Menu::count();
+        $total_pengguna = User::count();
+        return view('admin.dashboard',compact('title', 'total_menu', 'total_pengguna'));
     }
 }
