@@ -14,6 +14,9 @@
             <div class="col-md-12 mt-2">
                 <div class="container">
                     <h5><i class="fas fa-history"></i> Riwayat Pemesanan</h5>
+                    <div class="alert alert-warning order-announcement mt-2" role="alert">
+                        Pemesanan dengan status Belum Dibayar tidak akan dilakukan pembuatan
+                    </div>
                     <table class="table table-striped mt-2">
                         <thead>
                             <tr>                            

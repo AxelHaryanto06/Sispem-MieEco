@@ -7,6 +7,7 @@ use App\Menu;
 use App\Pesanan;
 use App\DetailPesanan;
 use App\User;
+use App\Pembayaran;
 use Carbon\Carbon;
 use Auth;
 use Alert;
@@ -58,7 +59,14 @@ class PesanController extends Controller
         //jumlah total
         $pesanan = Pesanan::where('id_user', Auth::user()->id)->where('status', 0)->first();
         $pesanan->total = $pesanan->total+$menu->harga*$request->jumlah_pesan;
-        $pesanan->update(); 
+        $pesanan->update();
+
+        // simpan ke database pembayaran
+        $pembayaran = new Pembayaran;
+        $pembayaran->id_user = Auth::user()->id;
+        $pembayaran->id_pesanan = $pesanan_baru->id;
+        $pembayaran->status_bayar = 0;
+        $pembayaran->save();
         
         alert()->success('Sukses','Pesanan Berhasil Masuk Keranjang');
         return redirect('user/menu');

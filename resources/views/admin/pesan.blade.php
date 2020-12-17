@@ -16,32 +16,35 @@
                            <table class="table myTable">
                                <thead class="text-primary">
                                    <th>No</th>
-                                   <th>Nama</th>
-                                   <th>Tanggal</th>
-                                   <th>Status</th>
+                                   <th>Atas Nama</th>
+                                   <th>Tanggal Pesan</th>
                                    <th>Total</th>
-                                   <th>Aksi</th>                                                         
+                                   <th>Status</th>
+                                   <th>Aksi</th>                                                                              
                                </thead>
                                <tbody>
                                 @php
                                    $no = 1
-                               @endphp
+                                @endphp
                                @foreach ($pesanan as $pesanan)
                                    <tr>
                                        <td>{{ $no++ }}</td>
                                        <td>{{ $pesanan->user->name }}</td>
                                        <td>{{ $pesanan->tanggal }}</td>
-                                       <td>
-                                           @if ($pesanan->status == 1)
-                                               Belum Dibayar
-                                           @else
-                                               Sudah Dibayar
-                                           @endif
-                                       </td>
                                        <td>Rp. {{ number_format($pesanan->total) }}</td>
                                        <td>
-                                           <a href="{{ url('history') }}/{{ $pesanan->id }}" class="btn btn-primary">Detail</a>
+                                           <div class="form-check">
+                                               <input type="checkbox" class="form-check-input" name="status-bayar">
+                                               @if ($pesanan->status == 1)
+                                                   Belum Dibayar
+                                               @else
+                                                   Sudah Dibayar
+                                               @endif
+                                           </div>
                                        </td>
+                                       <td>
+                                           <a href="{{ url('history') }}/{{ $pesanan->id }}" class="btn btn-primary">Detail</a>
+                                       </td>                                       
                                    </tr>
                                @endforeach
                                </tbody>

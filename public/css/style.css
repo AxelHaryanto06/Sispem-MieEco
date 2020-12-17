@@ -414,7 +414,7 @@ button.btn.btn-simpan{
 
 /* Cart */
 .cart-page-menu{
-    width: 46.27949%;;
+    width: 46.27949%;    
 }
 
 .cart-page-namamenu{
@@ -436,6 +436,26 @@ button.btn.btn-simpan{
 a.btn.btn-success.btn-cart{
     font-size: 14px;
     width: 100%;
+}
+
+/* Detail Pemesanan */
+.img-contoh{
+    object-fit: cover;
+}
+
+/* History Pemesanan */
+.img-bukti-foto{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.order-announcement{
+    padding-left: 0;
+}
+
+.th-menu{
+    text-align: center;
 }
 
 /* Pesan - Admin */

@@ -57,3 +57,4 @@ Route::put('/profile/{id}', 'ProfileController@update');
 
 Route::get('history', 'HistoryController@index');
 Route::get('history/{id}', 'HistoryController@detail');
+Route::post('history/pembayaran/{id}', 'HistoryController@detailbayar');
