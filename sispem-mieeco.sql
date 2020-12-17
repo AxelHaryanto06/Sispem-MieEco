@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2020 at 03:32 PM
+-- Generation Time: Dec 17, 2020 at 06:22 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -20,22 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `sispem-mieeco`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admins`
---
-
-CREATE TABLE `admins` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -66,7 +50,11 @@ INSERT INTO `detail_pesanans` (`id`, `id_menu`, `id_pesanan`, `jumlah`, `catatan
 (10, 2, 5, 2, NULL, 30000, '2020-11-16 06:41:30', '2020-11-16 06:41:30'),
 (11, 3, 5, 1, NULL, 16000, '2020-11-16 06:56:39', '2020-11-16 06:56:39'),
 (37, 3, 6, 2, NULL, 32000, '2020-11-25 07:16:06', '2020-11-25 07:16:06'),
-(39, 24, 7, 1, NULL, 3000, '2020-11-25 08:59:06', '2020-11-25 08:59:06');
+(39, 24, 7, 1, NULL, 3000, '2020-11-25 08:59:06', '2020-11-25 08:59:06'),
+(40, 2, 8, 1, NULL, 15000, '2020-12-13 08:27:09', '2020-12-13 08:27:09'),
+(42, 2, 9, 1, NULL, 15000, '2020-12-16 05:23:07', '2020-12-16 05:23:07'),
+(43, 23, 10, 1, NULL, 7000, '2020-12-16 05:26:43', '2020-12-16 05:26:43'),
+(46, 1, 11, 1, NULL, 18000, '2020-12-17 05:34:00', '2020-12-17 05:34:00');
 
 -- --------------------------------------------------------
 
@@ -132,6 +120,37 @@ CREATE TABLE `password_resets` (
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('axelh@gmail.com', '$2y$10$Wf5bql429HZUn49kx1ihOumfTID/pi/fNlBMFBIVTF0R/jzGayJ9u', '2020-11-30 03:25:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pembayarans`
+--
+
+CREATE TABLE `pembayarans` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_pesanan` int(11) NOT NULL,
+  `bukti_foto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status_bayar` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `pembayarans`
+--
+
+INSERT INTO `pembayarans` (`id`, `id_user`, `id_pesanan`, `bukti_foto`, `status_bayar`, `created_at`, `updated_at`) VALUES
+(1, 5, 10, '1608206778.jpg', '0', '2020-12-16 05:32:26', '2020-12-17 05:06:18'),
+(2, 2, 11, '1608208666.jpeg', '0', '2020-12-17 05:34:01', '2020-12-17 05:37:46');
+
 -- --------------------------------------------------------
 
 --
@@ -154,10 +173,14 @@ CREATE TABLE `pesanans` (
 
 INSERT INTO `pesanans` (`id`, `id_user`, `tanggal`, `status`, `total`, `created_at`, `updated_at`) VALUES
 (3, 2, '2020-11-02', '1', 96000, '2020-11-02 10:08:05', '2020-11-25 07:06:37'),
-(4, 5, '2020-11-15', '0', 10000, '2020-11-15 12:11:14', '2020-11-16 00:38:17'),
+(4, 5, '2020-11-15', '1', 10000, '2020-11-15 12:11:14', '2020-12-10 01:37:55'),
 (5, 4, '2020-11-16', '0', 46000, '2020-11-16 06:41:30', '2020-11-16 06:56:39'),
 (6, 2, '2020-11-25', '1', 32000, '2020-11-25 07:16:05', '2020-11-25 08:37:50'),
-(7, 2, '2020-11-25', '0', 3000, '2020-11-25 08:38:33', '2020-11-25 08:59:06');
+(7, 2, '2020-11-25', '1', 3000, '2020-11-25 08:38:33', '2020-12-03 05:40:12'),
+(8, 5, '2020-12-13', '1', 15000, '2020-12-13 08:27:09', '2020-12-13 08:28:45'),
+(9, 5, '2020-12-15', '1', 15000, '2020-12-14 23:58:44', '2020-12-16 05:23:20'),
+(10, 5, '2020-12-16', '1', 7000, '2020-12-16 05:26:42', '2020-12-16 05:32:59'),
+(11, 2, '2020-12-17', '1', 18000, '2020-12-17 05:34:00', '2020-12-17 05:35:32');
 
 -- --------------------------------------------------------
 
@@ -198,10 +221,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `role`, `email_verified_at`, `password`, `tgl_lahir`, `jenkel`, `alamat`, `no_hp`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Axel', 'axel@gmail.com', 'user', '2020-10-19 19:37:55', '123456', '1998-10-06', 'Laki-Laki', 'Puri Indah K-42', '0821289289389', NULL, NULL, NULL),
-(2, 'Axel', 'axelh@gmail.com', 'user', NULL, '$2y$10$SOoT/ZXsz76gs4gez0r/YO2Vi939P49T/fS0Icim6kON1CgJUCcDO', NULL, NULL, NULL, NULL, NULL, '2020-10-20 10:21:58', '2020-10-20 10:21:58'),
+(2, 'Axel', 'axelh@gmail.com', 'user', NULL, '$2y$10$SOoT/ZXsz76gs4gez0r/YO2Vi939P49T/fS0Icim6kON1CgJUCcDO', '1998-10-06', 'Laki - Laki', 'Purwokerto', '337343423423', 'LJ4FkSzF8gMWS4yTtewx3svgmzil6P34CP44ARP9wfKSqOBIsDJXHYJHBvy4', '2020-10-20 10:21:58', '2020-11-30 03:34:53'),
 (3, 'admin', 'admin@mieeco.com', 'admin', NULL, '$2y$10$SnBxHRWKZJE.xUcrj4NR1u.6kfHiKqAvJkSM/m.1ouZM2MOztT6rC', NULL, NULL, NULL, NULL, NULL, '2020-10-26 08:02:29', '2020-10-26 08:02:29'),
 (4, 'adriel', 'adriel@gmail.com', 'user', NULL, '$2y$10$wiCKHRSzfPV36/620Eo8mu9IUSbV0GileHvPwzXBXOnSOz./95oY.', NULL, NULL, NULL, NULL, NULL, '2020-10-26 10:54:36', '2020-10-26 10:54:36'),
-(5, 'agus', 'agus@gmail.com', NULL, NULL, '$2y$10$XBHUSU03ll4ilLNeGPV/QO9/l4.4Pi3yhhfkgyMkhMrlOVrEe8o8K', NULL, NULL, NULL, NULL, NULL, '2020-10-28 00:56:53', '2020-10-28 00:56:53'),
+(5, 'agus', 'agus@gmail.com', NULL, NULL, '$2y$10$XBHUSU03ll4ilLNeGPV/QO9/l4.4Pi3yhhfkgyMkhMrlOVrEe8o8K', NULL, NULL, NULL, NULL, 'E4ehKwq0TvqJOaykDVWdaeZZKh6HDenBYcARuj2yungogz1tcaz7DhngOLr8', '2020-10-28 00:56:53', '2020-10-28 00:56:53'),
 (6, 'dewi', 'dewi@gmail.com', NULL, NULL, '$2y$10$slhT5LThoEtI6Oxl2LZBu.gzBbj7X1nUHtUIQAPe2be.ERW1yBLkG', NULL, NULL, NULL, NULL, NULL, '2020-10-28 01:36:07', '2020-10-28 01:36:07'),
 (7, 'dono', 'dono@gmail.com', NULL, NULL, '$2y$10$w50TVgIHsPS3HysyVfzqO.jFtduGyvhUs14fs9SsexQY57yB27AxO', NULL, NULL, NULL, NULL, NULL, '2020-11-04 11:27:23', '2020-11-04 11:27:23'),
 (8, 'kezia', 'kezia@gmail.com', NULL, NULL, '$2y$10$.YyMABYtvsX788uSJ23TLuBpgPOblosEn2/qn3MWOoGdoCMs8d24e', NULL, NULL, NULL, NULL, NULL, '2020-11-09 04:04:21', '2020-11-09 04:04:21'),
@@ -217,13 +240,6 @@ INSERT INTO `users` (`id`, `name`, `email`, `role`, `email_verified_at`, `passwo
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `admins`
---
-ALTER TABLE `admins`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `admins_email_unique` (`email`);
 
 --
 -- Indexes for table `detail_pesanans`
@@ -250,6 +266,12 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `pembayarans`
+--
+ALTER TABLE `pembayarans`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `pesanans`
 --
 ALTER TABLE `pesanans`
@@ -273,16 +295,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `admins`
---
-ALTER TABLE `admins`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `detail_pesanans`
 --
 ALTER TABLE `detail_pesanans`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -297,10 +313,16 @@ ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `pembayarans`
+--
+ALTER TABLE `pembayarans`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `pesanans`
 --
 ALTER TABLE `pesanans`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tbl_role`
