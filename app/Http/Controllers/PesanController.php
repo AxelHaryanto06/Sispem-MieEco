@@ -108,8 +108,27 @@ class PesanController extends Controller
 
     public function adminindex()
     {
-        $pesanan = Pesanan::all();
-      
-        return view('admin.pesan', compact('pesanan'));
+        $pesanan = Pesanan::all();        
+        $data = Pesanan::with("pembayaran")->where('status', 1)->get();
+
+        return view('admin.pesan', compact('pesanan','data'));
+    }
+
+    public function adminkonfirmasi(Request $request)
+    {                
+        // Pembayaran::findOrFail($request->id_pesanan)->update([
+        //     'status_bayar' => $request->input('status_bayar')
+        //     ]);
+        // dd($request);
+        // $bayar = Pesanan::with("pembayaran")->find($request->id_pesanan);        
+        // $bayarans = Pembayaran::find($bayar->pembayaran[0]->id);
+        $bayarans = Pembayaran::find($request->id);
+        $bayarans->status_bayar = $request->status_bayar;
+        $bayarans->update();        
+
+        // $pesanan = Pesanan::all();        
+        // $data = Pesanan::with("pembayaran")->where('status', 1)->get();      
+        // return redirect('/admin/pemesanan')->with('pesanan','data');    
+        return redirect('/admin/pemesanan');
     }
 }

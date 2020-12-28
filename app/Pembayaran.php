@@ -13,6 +13,6 @@ class Pembayaran extends Model
 
     public function pesanan()
     {
-        return $this->hasMany('App\Pesanan', 'id');
+        return $this->hasMany('App\Pesanan', 'id_pesanan', 'id');
     }
 }

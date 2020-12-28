@@ -41,6 +41,7 @@ Route::group(['middleware' => ['auth','admin']], function() {
     Route::put('/admin/daftarmenu/update/{id}', 'MenuController@adminindexupdate');
     Route::get('/admin/daftarmenu/hapus/{id}', 'MenuController@adminindexhapus');
     Route::get('/admin/pemesanan', 'PesanController@adminindex');
+    Route::post('/admin/konfirmasipemesanan', 'PesanController@adminkonfirmasi');
 });
 Auth::routes();
 

@@ -95,14 +95,6 @@
                                 <h5 class="card-title">Mohon Selesaikan Pembayaran Anda</h5>
                                 <p>Bukti Pembayaran Tidak Ditemukan !</p>
                             @endif
-                            
-                            {{-- @foreach ($pembayaran as $bayar)
-                                @if (!empty($bayar))
-                                    
-                                @else
-                                    
-                                @endif                                
-                            @endforeach --}}
                         </div>
                     </div>
                 </div>

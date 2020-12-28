@@ -15,4 +15,9 @@ class Pesanan extends Model
     {
         return $this->hasMany('App\DetailPesanan','id_pesanan', 'id');
     }
+
+    public function pembayaran()
+    {
+        return $this->hasMany('App\Pembayaran','id_pesanan');
+    }
 }
