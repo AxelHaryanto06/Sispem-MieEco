@@ -348,6 +348,37 @@ p{
     margin-bottom: auto;
 }
 
+/* Contact */
+.contact-follow{
+    font-weight: 600;
+}
+
+.contact-medsos{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #000000;
+}
+
+.contact-medsos:hover,
+.contact-medsos:active{
+    border-bottom: none!important;
+}
+
+.small-headline-card{
+    background-color: #FEC921;
+    padding: 5px;
+}
+
+.contact-lokasi{
+    padding-left: 0!important;
+    text-align: center;
+}
+
+.contact-lokasi-header{
+    font-size: 24px;    
+}
+
 /* Menu - Pesan */
 button.btn.btn-primary.btn-custom {
     color: white;

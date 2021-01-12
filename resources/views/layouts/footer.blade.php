@@ -51,7 +51,7 @@
             </div>
         </div>
                 <div class="me-line">
-                    <div class="col-12 copyright">&copy; 2020 Mie Eco</div>
+                    <div class="col-12 copyright">&copy; 2021 Mie Eco</div>
                 </div>            
     </div>
 </section>

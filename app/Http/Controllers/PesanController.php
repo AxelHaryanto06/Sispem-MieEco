@@ -131,4 +131,9 @@ class PesanController extends Controller
         // return redirect('/admin/pemesanan')->with('pesanan','data');    
         return redirect('/admin/pemesanan');
     }
+
+    public function admindetail($id)
+    {
+        return view();
+    }
 }

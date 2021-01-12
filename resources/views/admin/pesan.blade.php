@@ -54,7 +54,7 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <a href="{{ url('history') }}/{{ $dt->id }}" class="btn btn-primary">Detail</a>
+                                                <a href="{{ url('/admin/pemesanan') }}/{{ $dt->id }}" class="btn btn-primary">Detail</a>
                                             </td>                                       
                                         </tr>
                                     @endforeach
