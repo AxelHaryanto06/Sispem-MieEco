@@ -89,7 +89,7 @@
                             <h5><i class="fas fa-receipt"></i> Bukti Pembayaran</h5>
                         </div>
                         <div class="card-body">
-                            @if (!empty($pembayaran))
+                            @if (!empty($pembayaran->bukti_foto))
                                 <img src="{{ url('img') }}/{{ $pembayaran->bukti_foto }}" class="img-bukti-foto" alt="bukti_foto" width="400" height="200">
                             @else
                                 <h5 class="card-title">Mohon Selesaikan Pembayaran Anda</h5>

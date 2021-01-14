@@ -32,7 +32,7 @@
                                         $no = 1
                                     @endphp                                
                                     @foreach ($data as $dt)
-                                        <tr>                                                                                                                                                                              
+                                        <tr>                                                                                                                                                                                                                                                          
                                             <td>{{ $no++ }}</td>                                            
                                             <td>ME201400{{ $dt->id }}</td>
                                             <td>{{ $dt->user->name }}</td>
@@ -54,7 +54,14 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <a href="{{ url('/admin/pemesanan') }}/{{ $dt->id }}" class="btn btn-primary">Detail</a>
+                                                {{-- <a href="{{ url('/admin/pemesanan') }}/{{ $dt->id }}" class="btn btn-primary">Detail</a> --}}
+                                                <button type="button" id="detail" class="btn btn-primary" data-toggle="modal" data-target="#modal-detail"
+                                                    data-name="<?=$dt->user->name?>"
+                                                    data-menu="<?=$dt->detail_pesanan[0]->menu->nama_menu?>"
+                                                    data-total="<?="Rp " . number_format($dt->total)?>"
+                                                    data-buktifoto="<?=asset('img/'.$dt->pembayaran[0]->bukti_foto)?>">
+                                                    Detail
+                                                </button>                                                
                                             </td>                                       
                                         </tr>
                                     @endforeach
@@ -72,7 +79,46 @@
         </div>
     </div>
 </section>
- 
+
+<div class="modal fade" id="modal-detail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">Detail Pesanan</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <table class="table table-bordered no-margin">
+                <tbody>
+                    <tr>
+                        <th>Atas Nama</th>
+                        <td><span id="name"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Menu</th>
+                        <td><span id="menu"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Total Bayar</th>
+                        <td><span id="total"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Bukti Pembayaran</th>
+                        <td><img id="bukti_foto" width="50%"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Send message</button>
+        </div>
+        </div>
+    </div>
+</div>
+
 @endsection
  
 @section('scripts')
@@ -87,6 +133,19 @@
             location.reload();
         })
  
+    })
+
+    $(document).ready(function() {
+        $(document).on('click', '#detail', function() {
+            var name = $(this).data('name');
+            var menu = $(this).data('menu');
+            var total = $(this).data('total');
+            var buktifoto = $(this).data('buktifoto');
+            $('#name').text(name);
+            $('#menu').text(menu);
+            $('#total').text(total);
+            $('#bukti_foto').attr("src",$(this).data('buktifoto'));
+        })
     })
 </script>
  

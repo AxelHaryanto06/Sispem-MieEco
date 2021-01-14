@@ -109,7 +109,7 @@ class PesanController extends Controller
     public function adminindex()
     {
         $pesanan = Pesanan::all();        
-        $data = Pesanan::with("pembayaran")->where('status', 1)->get();
+        $data = Pesanan::with("pembayaran","detail_pesanan")->where('status', 1)->get();
 
         return view('admin.pesan', compact('pesanan','data'));
     }
@@ -132,8 +132,8 @@ class PesanController extends Controller
         return redirect('/admin/pemesanan');
     }
 
-    public function admindetail($id)
+    public function admindetail()
     {
-        return view();
+        return view('admin.detailpesan');
     }
 }
