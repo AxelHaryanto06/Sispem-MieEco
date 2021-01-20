@@ -51,14 +51,14 @@
 
         <div class="form-group row check-login-position">                            
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                    <label class="form-check-label" for="remember">
+                <input class="form-check-input" type="hidden" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                    {{-- <label class="form-check-label" type="hidden" for="remember">
                         {{ __('Remember Me') }}
-                    </label>
+                    </label> --}}
             </div>                            
         </div>
 
-        <div class="form-group mb-0">                            
+        {{-- <div class="form-group mb-0">                            
             <button type="submit" class="btn btn-primary btn-submit">
                 {{ __('Login') }}
             </button>
@@ -71,7 +71,7 @@
                 </div>
             </div>
             @endif                            
-        </div>
+        </div> --}}
         </form>
         <div class="toregister">
             <div class="row">

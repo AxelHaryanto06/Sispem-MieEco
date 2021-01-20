@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Menu;
+use App\Pesanan;
 
 class DashboardController extends Controller
 {
@@ -28,6 +29,7 @@ class DashboardController extends Controller
         $title = "Dashboard Admin";
         $total_menu = Menu::count();
         $total_pengguna = User::count();
-        return view('admin.dashboard',compact('title', 'total_menu', 'total_pengguna'));
+        $total_pesanan = Pesanan::where('status', 1)->count();
+        return view('admin.dashboard',compact('title', 'total_menu', 'total_pengguna', 'total_pesanan'));
     }
 }
