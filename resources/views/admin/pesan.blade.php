@@ -54,14 +54,7 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                {{-- <a href="{{ url('/admin/pemesanan') }}/{{ $dt->id }}" class="btn btn-primary">Detail</a> --}}
-                                                <button type="button" id="detail" class="btn btn-primary" data-toggle="modal" data-target="#modal-detail"
-                                                    data-name="<?=$dt->user->name?>"
-                                                    data-menu="<?=$dt->detail_pesanan[0]->menu->nama_menu?>"
-                                                    data-total="<?="Rp " . number_format($dt->total)?>"
-                                                    data-buktifoto="<?=asset('img/'.$dt->pembayaran[0]->bukti_foto)?>">
-                                                    Detail
-                                                </button>                                                
+                                                <a href="{{ url('/admin/pemesanan') }}/{{ $dt->id }}" class="btn btn-primary">Detail</a>                                                                                                                                                                                                
                                             </td>                                       
                                         </tr>
                                     @endforeach
@@ -95,6 +88,10 @@
                     <tr>
                         <th>Atas Nama</th>
                         <td><span id="name"></span></td>
+                    </tr>
+                    <tr>
+                        <th>Menu</th>
+                        <td><span id="menu"></span></td>
                     </tr>
                     <tr>
                         <th>Menu</th>
