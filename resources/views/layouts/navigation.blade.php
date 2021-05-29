@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navigation-bar">
+<nav class="navbar navbar-expand-lg navigation-bar container">
   <div class="container">
   <a class="navbar-brand" href="/">
-    <img src="/img/mie-eco2 1.svg" width="219" height="41" class="d-inline-block align-top" alt="">
+    <img src="/img/mieeco2 2.svg" width="219" height="41" class="d-inline-block align-top" alt="">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

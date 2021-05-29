@@ -42,7 +42,7 @@
                                                 <td>Jumlah Pesan</td>
                                                 <td>:</td>
                                                 <td>                                                    
-                                                    <input type="text" name="jumlah_pesan" class="form-control" required="" id="">                                                    
+                                                    <input type="number" name="jumlah_pesan" class="form-control" required="" id="">                                                    
                                                 </td>
                                             </tr>    
                                             <tr>

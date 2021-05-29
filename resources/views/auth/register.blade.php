@@ -14,7 +14,7 @@
         <div class="box-left register-image-left css-2">
             <div class="col-md-12 image-geser">
                 <a href="{{ url('/') }}">
-                    <img src="/img/mie-eco2 1.svg" width="219" height="auto" class="d-inline-block align-top" alt="">
+                    <img src="/img/mieeco2 2.svg" width="219" height="auto" class="d-inline-block align-top" alt="">
                 </a>
             </div>
             <figure class="gambar-register">

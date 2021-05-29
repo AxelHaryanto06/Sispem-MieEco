@@ -4,7 +4,7 @@
             <div class="col-sm-12 col-md-3">
                 <div class="logo">
                     <a href="/" class="logo-mieeco">
-                        <img src="/img/mie-eco2 1.svg" alt="">
+                        <img src="/img/mieeco2 2.svg" alt="">
                     </a>
                 </div>
             </div>
