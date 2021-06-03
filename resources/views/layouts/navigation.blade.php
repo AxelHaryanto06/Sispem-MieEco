@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navigation-bar container">
+<nav class="navbar navbar-expand-lg navigation-bar">
   <div class="container">
   <a class="navbar-brand" href="/">
     <img src="/img/mieeco2 2.svg" width="219" height="41" class="d-inline-block align-top" alt="">

@@ -25,6 +25,7 @@
                                 <strong class="harga">Harga :</strong> Rp. {{ number_format($m->harga) }} <br>
                             </p>
                             <a href="{{ url('user/menu/pesan') }}/{{ $m->id }}" class="btn btn-primary btn-pesan">Pesan</a>
+                            {{-- <a href="{{ url('layanan') }}" class="btn btn-primary btn-pesan">Pesan</a> --}}
                         </div>
                         </div>
                     </div>

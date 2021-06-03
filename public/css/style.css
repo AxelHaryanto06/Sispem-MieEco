@@ -4,6 +4,10 @@
     margin: 0;
 }
 
+html, body{
+    height: 100%;
+}
+
 /* Navigation Bar */
 li {
     list-style: none;
@@ -348,7 +352,42 @@ p{
     margin-bottom: auto;
 }
 
+/* Layanan */
+.header-body-mieeco{
+    color: #FF0000;
+}
+
+.card-rounded{
+    border-radius: 20px!important;
+    height: 100%!important;
+}
+
+.service-icon{
+    height: 75px;
+    width: auto;
+}
+
+.btn-pilih{
+    color: #fff!important;
+    background-color: #FF0000!important;
+    border-color: #FF0000!important;
+}
+
+.btn-pilih:hover{
+    color: black !important;
+}
+
+.card-title-layanan{
+    font-weight: 600;
+    color: #FF0000;
+}
+
 /* Contact */
+.page-wrapper{
+    min-height: 100%;
+    padding-bottom: 20px;
+}
+
 .contact-follow{
     font-weight: 600;
 }
@@ -498,6 +537,9 @@ a.btn.btn-success.btn-cart{
 .footer{
     background-color: #FEC921;
     padding: 27px 0;
+    height: 250px;
+    position: relative !important;
+    bottom: 0 !important;
 }
 
 .sitemaplist{

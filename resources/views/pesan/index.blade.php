@@ -44,7 +44,7 @@
                                                 <td>                                                    
                                                     <input type="number" name="jumlah_pesan" class="form-control" required="" id="">                                                    
                                                 </td>
-                                            </tr>    
+                                            </tr>                                            
                                             <tr>
                                                 <td>Catatan</td>
                                                 <td>:</td>
@@ -52,7 +52,7 @@
                                                     <textarea class="form-control" name="catatan" rows="3"></textarea>
                                                     <button type="submit" class="btn btn-primary btn-custom mt-3"><i class="fas fa-shopping-cart"></i> Masukan Pesanan</button>
                                                 </td>
-                                            </tr>    
+                                            </tr>                                                
                                         </form>
                                     </tbody>
                                 </table>

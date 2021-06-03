@@ -8,6 +8,7 @@ use App\Pesanan;
 use App\DetailPesanan;
 use App\User;
 use App\Pembayaran;
+use App\Layanan;
 use Carbon\Carbon;
 use Auth;
 use Alert;
@@ -24,6 +25,15 @@ class PesanController extends Controller
         $menu = Menu::where('id', $id)->first();
 
         return view('pesan.index', compact('menu'));
+    }
+
+    public function layanan()
+    {
+        $layanan = Layanan::all();
+        // $pesanan = new Pesanan;
+        // $pesanan->id_user = Auth::user()->id;
+
+        return view('pesan.layanan', compact('layanan'));
     }
 
     public function pesan(Request $request, $id)
