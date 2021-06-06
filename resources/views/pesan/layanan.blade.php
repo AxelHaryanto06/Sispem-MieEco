@@ -1,4 +1,4 @@
-@extends('layouts.app')
+nav@extends('layouts.app')
 @section('title', 'Mie Eco')
 @section('content')
     <section class="container">
@@ -23,7 +23,7 @@
                                     </div>
                                 </div>
                             </div>                        
-                        @endforeach
+                        @endforeach                        
                     </div>
                 </div>
             </div>

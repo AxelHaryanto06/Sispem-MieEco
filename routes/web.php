@@ -25,6 +25,7 @@ Auth::routes();
 
 Route::view('user/menu', 'menu');
 Route::get('user/menu', 'MenuController@index');
+Route::get('pesan/menu', 'MenuController@pesanindex');
 Route::view('user/contact', 'contact');
 Route::view('login', 'login');
 Route::view('register', 'register');
@@ -47,7 +48,7 @@ Route::group(['middleware' => ['auth','admin']], function() {
 Auth::routes();
 
 Route::get('layanan', 'PesanController@layanan');
-// Route::post('pesan', 'PesanController@indexpesan');
+Route::get('pesan/{id}', 'PesanController@indexpesan');
 Route::get('user/menu/pesan/{id}', 'PesanController@index');
 Route::post('user/menu/pesan/{id}', 'PesanController@pesan');
 Route::get('cart', 'PesanController@cart');

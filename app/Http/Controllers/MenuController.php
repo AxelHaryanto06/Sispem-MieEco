@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Menu;
+use App\Layanan;
+use App\User;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -10,6 +12,12 @@ class MenuController extends Controller
     {
         $menu = Menu::paginate(20);
         return view('menu', ['menu' => $menu]);
+    }
+    
+    public function pesanindex()
+    {
+        $menu = Menu::paginate(20);                
+        return view('pesanmenu', ['menu' => $menu]);
     }
     
     public function adminindex()

@@ -27,11 +27,43 @@ class PesanController extends Controller
         return view('pesan.index', compact('menu'));
     }
 
+    public function indexpesan(Request $request, $id)
+    {
+        $menu = Menu::where('id', $id)->first();
+        $layanan = Layanan::where('id_layanan', $id)->first();
+        $tanggal = Carbon::now();
+
+        //$cek_pesanan = Pesanan::where('id_user', Auth::user()->id)->where('status', 0)->first();
+
+        // if (empty($cek_pesanan)) {
+            $pesanan = new Pesanan;
+            $pesanan->id_user = Auth::user()->id;
+            $pesanan->tanggal = $tanggal;        
+            $pesanan->status = 0;
+            $pesanan->total = 0;
+            $pesanan->id_layanan = $layanan->id_layanan;        
+            $pesanan->save();
+        //}
+        
+        // $pesanan_baru = Pesanan::where('id_user', Auth::user()->id)->where('status', 0)->first();
+        // //jumlah total
+        // $pesanan = Pesanan::where('id_user', Auth::user()->id)->where('status', 0)->first();
+        // $pesanan->total = $pesanan->total+$menu->harga*$request->jumlah_pesan;
+        // $pesanan->update();
+
+        // // simpan ke database pembayaran
+        // $pembayaran = new Pembayaran;
+        // $pembayaran->id_user = Auth::user()->id;
+        // $pembayaran->id_pesanan = $pesanan_baru->id;
+        // $pembayaran->status_bayar = 0;
+        // $pembayaran->save();
+        
+        return redirect('pesan/menu');
+    }
+
     public function layanan()
     {
-        $layanan = Layanan::all();
-        // $pesanan = new Pesanan;
-        // $pesanan->id_user = Auth::user()->id;
+        $layanan = Layanan::all();        
 
         return view('pesan.layanan', compact('layanan'));
     }
@@ -44,7 +76,7 @@ class PesanController extends Controller
         // Validasi pesanan
         $cek_pesanan = Pesanan::where('id_user', Auth::user()->id)->where('status', 0)->first();
 
-        // simpan ke database pesan
+        //simpan ke database pesan
         if (empty($cek_pesanan)) { //cek pesanan sudah pernah buat atau belum
             $pesanan =  new Pesanan;
             $pesanan->id_user = Auth::user()->id;
@@ -79,7 +111,7 @@ class PesanController extends Controller
         $pembayaran->save();
         
         alert()->success('Sukses','Pesanan Berhasil Masuk Keranjang');
-        return redirect('user/menu');
+        return redirect('pesan/menu');
     }
     
     public function cart()
