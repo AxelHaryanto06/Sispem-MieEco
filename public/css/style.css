@@ -13,6 +13,18 @@ li {
     list-style: none;
 }
 
+.cart-mieeco-modaltitle{
+    font-weight: 700;
+}
+
+.text-mieeco-red{
+    color: #FF0000;
+}
+
+.text-layanan-mieeco{
+    font-style: 600 !important;
+}
+
 .navigation-bar{
     background-color: #FEC921;
     position: fixed;
@@ -483,8 +495,12 @@ button.btn.btn-simpan{
 }
 
 /* Cart */
-.cart-page-menu{
-    width: 46.27949%;    
+td.small{
+    font-weight: 600;
+}
+
+p.text-subtotal-mieeco{
+    font-weight: 800;    
 }
 
 .cart-page-namamenu{
@@ -498,14 +514,18 @@ button.btn.btn-simpan{
 }
 
 .btn-cart{
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 20px;
+    font-size: 14px !important;    
+    border-radius: 20px !important;
+    width: auto !important;
+    color: #fff !important;
+    background-color: #FF0000 !important;
+    border-color: #FF0000 !important;
 }
 
-a.btn.btn-success.btn-cart{
-    font-size: 14px;
-    width: 100%;
+.btn-outline-mieeco{
+    color: #FF0000 !important;
+    border-color: #FF0000 !important;
+    border-radius: 40px !important;
 }
 
 /* Detail Pemesanan */

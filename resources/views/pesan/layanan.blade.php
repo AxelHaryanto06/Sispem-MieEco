@@ -1,4 +1,4 @@
-nav@extends('layouts.app')
+@extends('layouts.app')
 @section('title', 'Mie Eco')
 @section('content')
     <section class="container">

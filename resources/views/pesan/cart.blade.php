@@ -12,9 +12,21 @@
                         </ol>
                     </nav>
                 </div>
-                <div class="col-md-12 mt-2">                
+                <div class="col-md-12 mt-2">
+                @php                    
+                    $pesanan_utama = \App\Pesanan::where('id_user', Auth::user()->id)->where('status',0)->first();                                        
+                    if (!empty($pesanan_utama)) 
+                    {                                    
+                        $cek_cart = \App\DetailPesanan::where('id_pesanan', $pesanan_utama->id)->count();                        
+                    }
+                @endphp
+                @if ($cek_cart == 0)
+                    <div class="alert alert-danger" role="alert">
+                        This is a danger alert—check it out!
+                    </div>
+                @else
                     @if (!empty($pesanan))                                    
-                    <p align="right">Tanggal Pesan : {{ $pesanan->tanggal }}</p>
+                    <p align="right">Tanggal Pesan : {{ $pesanan->tanggal }}</p>                    
                     <table class="table table-striped">
                         <thead>
                             <tr>                            
@@ -60,7 +72,8 @@
                             </tr>
                         </tbody>
                     </table>
-                    @endif
+                    @endif                    
+                @endif                
                 </div>
             </div>
         </div>
