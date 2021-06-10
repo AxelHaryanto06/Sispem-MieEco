@@ -32,7 +32,7 @@
                         @else
                           <div class="navigation-link">
                               <!-- Button trigger modal -->
-                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                              <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
                                 <i class="fas fa-shopping-cart"></i>
                                   <?php
                                     $pesanan_utama = \App\Pesanan::where('id_user', Auth::user()->id)->where('status',0)->first();
@@ -101,7 +101,7 @@
                                                   </thead>
                                                   <tbody>
                                                       @foreach ($detail_pesanans as $detail_pesanan)
-                                                      <tr>                           
+                                                      <tr id="sid{{$detail_pesanan->id}}">                           
                                                           <td>
                                                               <div class="col-md-12 cart-page-namamenu">
                                                                   {{ $detail_pesanan->menu->nama_menu }}
@@ -110,15 +110,15 @@
                                                                   <i>{{ $detail_pesanan->catatan }}</i>
                                                               </div>                                
                                                           </td>
-                                                          <td align="center">{{ $detail_pesanan->jumlah }}</td>
-                                                          <td align="left">Rp. {{ number_format($detail_pesanan->menu->harga) }}</td>
+                                                          <td class="cart-jumlah" align="center" value="{{ $detail_pesanan->jumlah }}">{{ $detail_pesanan->jumlah }}</td>
+                                                          <td class="cart-harga" align="left">Rp. {{ number_format($detail_pesanan->menu->harga) }}</td>
                                                           <td align="left">Rp. {{ number_format($detail_pesanan->jml_harga) }}</td>
                                                           <td>
-                                                              <form action="{{ url('cart') }}/{{ $detail_pesanan->id }}" method="post">
+                                                              {{-- <form action="{{ url('cart') }}/{{ $detail_pesanan->id }}" method="post">
                                                                   @csrf
-                                                                  @method('DELETE')
-                                                                  <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan menghapus menu ini ?');"><i class="fas fa-trash-alt"></i></button>
-                                                              </form>
+                                                                  @method('DELETE') --}}
+                                                                  <button href="javascript:void(0)" class="btn btn-danger btn-sm" onclick="deleteCart({{ $detail_pesanan->id }})"><i class="fas fa-trash-alt"></i></button>
+                                                              {{-- </form> --}}
                                                           </td>
                                                       </tr>                            
                                                       @endforeach                                                      
@@ -131,29 +131,18 @@
                                       @endif
                                     </div>
                                     <div class="modal-footer">                                      
-                                      <p class="text-subtotal-mieeco">Subtotal : </p>
-                                      <p class="text-subtotal-mieeco mr-auto">Rp. {{ number_format($pesanan->total) }}</p>
+                                      <p class="text-subtotal-mieeco">Total : </p>
+                                      <div id="totalajaxcall">
+                                        <div class="totalload">
+                                          <div class="text-subtotal-mieeco">Rp. {{ number_format($pesanan->total) }}</div>
+                                        </div>
+                                      </div>
                                       <button type="button" class="btn btn-outline-mieeco" data-dismiss="modal">Kembali</button>
                                       <a href="{{ url('check-out') }}" class="btn btn-cart">Buat Pesanan</a>
                                     </div>
                                   </div>
                                 </div>
-                              </div>                              
-                              <li class="nav-item linkakun">
-                                <?php
-                                  $pesanan_utama = \App\Pesanan::where('id_user', Auth::user()->id)->where('status',0)->first();
-                                  if (!empty($pesanan_utama)) 
-                                  {                                    
-                                    $notif = \App\DetailPesanan::where('id_pesanan', $pesanan_utama->id)->count();
-                                  }
-                                ?>      
-                                <a class="nav-link" href="{{ url('cart') }}">
-                                  <i class="fas fa-shopping-cart"></i>
-                                  @if (!empty($notif))
-                                    <span class="badge badge-danger badge-radius">{{ $notif }}</span>                                    
-                                  @endif
-                                </a>
-                              </li>
+                              </div>                                                            
                               <li class="nav-item dropdown">
                                   <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                       {{ Auth::user()->name }} <span class="caret"></span>

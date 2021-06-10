@@ -499,7 +499,15 @@ td.small{
     font-weight: 600;
 }
 
+#totalajaxcall{
+    margin-right: auto;
+}
+
 p.text-subtotal-mieeco{
+    font-weight: 800;    
+}
+
+div.text-subtotal-mieeco{
     font-weight: 800;    
 }
 

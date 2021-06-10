@@ -124,7 +124,7 @@ class PesanController extends Controller
         return view('pesan.cart', compact('pesanan', 'detail_pesanans'));
     }
 
-    public function hapus($id)
+    public function deleteCart($id)
     {
         $detail_pesanan = DetailPesanan::where('id', $id)->first();
 
@@ -134,8 +134,9 @@ class PesanController extends Controller
 
         $detail_pesanan->delete();
 
-        alert()->error('Hapus','Pesanan Berhasil Dihapus');
-        return redirect('cart');
+        return response()->json(['success'=>'Pesanan Berhasil Dihapus']);
+        //alert()->error('Hapus','Pesanan Berhasil Dihapus');
+        // return redirect('cart');
     }
 
     public function checkout()

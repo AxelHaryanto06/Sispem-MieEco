@@ -67,7 +67,6 @@
                                     <div class="col-sm-5 responsive">
                                         <img style="height: 200px; width: 270px; padding: 10px" src="http://syspwt.com/sispemtik-via-gunungmalang/assets/img/bukti/contoh1.jpeg" class="img-contoh" alt="Responsive image">
                                     </div>
-        
                                     <div class="col-sm-5">
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="foto_bukti" name="foto_bukti">
