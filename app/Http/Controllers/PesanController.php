@@ -104,11 +104,15 @@ class PesanController extends Controller
         $pesanan->update();
 
         // simpan ke database pembayaran
-        $pembayaran = new Pembayaran;
-        $pembayaran->id_user = Auth::user()->id;
-        $pembayaran->id_pesanan = $pesanan_baru->id;
-        $pembayaran->status_bayar = 0;
-        $pembayaran->save();
+        $cek_pembayaran = Pembayaran::where('id_user', Auth::user()->id)->where('status_bayar', 0)->first();
+
+        if (empty($cek_pembayaran)) {
+            $pembayaran = new Pembayaran;
+            $pembayaran->id_user = Auth::user()->id;
+            $pembayaran->id_pesanan = $pesanan_baru->id;
+            $pembayaran->status_bayar = 0;
+            $pembayaran->save();
+        }
         
         alert()->success('Sukses','Pesanan Berhasil Masuk Keranjang');
         return redirect('pesan/menu');
