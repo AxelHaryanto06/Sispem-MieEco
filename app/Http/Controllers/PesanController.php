@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Menu;
 use App\Pesanan;
 use App\DetailPesanan;
@@ -30,7 +31,7 @@ class PesanController extends Controller
     public function indexpesan(Request $request, $id)
     {
         $menu = Menu::where('id', $id)->first();
-        $layanan = Layanan::where('id_layanan', $id)->first();
+        $layanan = Layanan::where('id', $id)->first();
         $tanggal = Carbon::now();
 
         //$cek_pesanan = Pesanan::where('id_user', Auth::user()->id)->where('status', 0)->first();
@@ -41,22 +42,9 @@ class PesanController extends Controller
             $pesanan->tanggal = $tanggal;        
             $pesanan->status = 0;
             $pesanan->total = 0;
-            $pesanan->id_layanan = $layanan->id_layanan;        
+            $pesanan->id_layanan = $layanan->id;        
             $pesanan->save();
         //}
-        
-        // $pesanan_baru = Pesanan::where('id_user', Auth::user()->id)->where('status', 0)->first();
-        // //jumlah total
-        // $pesanan = Pesanan::where('id_user', Auth::user()->id)->where('status', 0)->first();
-        // $pesanan->total = $pesanan->total+$menu->harga*$request->jumlah_pesan;
-        // $pesanan->update();
-
-        // // simpan ke database pembayaran
-        // $pembayaran = new Pembayaran;
-        // $pembayaran->id_user = Auth::user()->id;
-        // $pembayaran->id_pesanan = $pesanan_baru->id;
-        // $pembayaran->status_bayar = 0;
-        // $pembayaran->save();
         
         return redirect('pesan/menu');
     }
@@ -104,7 +92,7 @@ class PesanController extends Controller
         $pesanan->update();
 
         // simpan ke database pembayaran
-        $cek_pembayaran = Pembayaran::where('id_user', Auth::user()->id)->where('status_bayar', 0)->first();
+        $cek_pembayaran = Pembayaran::where('id_user', Auth::user()->id)->where('id_pesanan', $pesanan->id)->first();
 
         if (empty($cek_pembayaran)) {
             $pembayaran = new Pembayaran;
@@ -138,19 +126,41 @@ class PesanController extends Controller
 
         $detail_pesanan->delete();
 
-        return response()->json(['success'=>'Pesanan Berhasil Dihapus']);
-        //alert()->error('Hapus','Pesanan Berhasil Dihapus');
-        // return redirect('cart');
+        return response()->json(['success'=>'Pesanan Berhasil Dihapus']);        
     }
 
     public function checkout()
     {
         $pesanan = Pesanan::where('id_user', Auth::user()->id)->where('status', 0)->first();
-        $pesanan->status = 1;
-        $pesanan->update();
+        // $pesanan->status = 1;
+        // $pesanan->update();
 
-        alert()->success('Sukses','Checkout Berhasil');
-        return redirect('cart');
+        // alert()->success('Sukses','Checkout Berhasil');
+        return redirect('review-order');
+    }
+
+    public function tinjaupesanan($id){
+
+        //$pesanan = DB::table('pesanans')->join('pelayanan','pesanans.id_layanan','=','pelayanan.id_layanan')->where('id_user', Auth::user()->id)->where('status', 0)->get();
+        //$pesanan = Pesanan::all()->where('status',0);
+        $pesanan = Pesanan::where('id_layanan',$id)->with('layanan')->first();
+        
+        $tampil_pesanan = Pesanan::where('id_user', Auth::user()->id)->where('status', 0)->first();
+        if (!empty($tampil_pesanan)) {            
+            $detail_pesanans = DetailPesanan::where('id_pesanan', $tampil_pesanan->id)->get();
+        }
+                
+        return view('pesan.tinjaupesanan', compact('pesanan','detail_pesanans','tampil_pesanan'));
+    }
+
+    public function tinjaupesananstore(Request $request)
+    {
+        $pesanan_tinjau = Pesanan::where('id_user', Auth::user()->id)->where('status', 0)->first();
+        $pesanan_tinjau->jam = $request->jam;
+        $pesanan_tinjau->status = 1;
+        $pesanan_tinjau->update();        
+
+        return redirect('/');
     }
 
     public function adminindex()

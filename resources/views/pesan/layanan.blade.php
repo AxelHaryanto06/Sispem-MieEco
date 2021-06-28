@@ -18,7 +18,7 @@
                                         </center>
                                         <h5 class="card-title mt-auto card-title-layanan">{{ $layanan->jenis }}</h5>
                                         <div class="text-center">
-                                            <a href="{{ url('pesan') }}/{{ $layanan->id_layanan }}" class="btn btn-primary btn-pilih mt-auto">Pilih</a>
+                                            <a href="{{ url('pesan') }}/{{ $layanan->id }}" class="btn btn-primary btn-pilih mt-auto">Pilih</a>
                                         </div>
                                     </div>
                                 </div>

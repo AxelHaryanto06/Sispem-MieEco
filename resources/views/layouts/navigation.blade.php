@@ -56,90 +56,101 @@
                                         <span aria-hidden="true">&times;</span>
                                       </button>
                                     </div>
-                                    <div class="modal-body">
-                                      @if ($notif == 0)
-                                        <div class="alert alert-danger" role="alert">
-                                          Keranjang anda kosong, silakan lakukan pemesanan
-                                        </div>
-                                      @else
-                                        <?php                                                                                                                                                                                                                                                         
-                                          $pesanan = \App\Pesanan::where('id_user', Auth::user()->id)->where('status', 0)->first();
-                                          $pesanans = DB::table('pesanans')->join('pelayanan','pesanans.id_layanan','=','pelayanan.id_layanan')->where('id_user', Auth::user()->id)->where('status', 0)->get();                                                                                    
-                                          if (!empty($pesanan)) {            
-                                              $detail_pesanans = \App\DetailPesanan::where('id_pesanan', $pesanan->id)->get();
-                                          }                                          
-                                        ?>                                        
-                                        @if (!empty($pesanan))                                          
-                                          <div class="cart-info text-layanan-mieeco">
-                                            <table class="table table-sm table-borderless w-auto">
-                                              <tbody>
-                                                <tr>
-                                                  <td class="small">Layanan</td>
-                                                  <td class="small">:</td>
-                                                  <td class="text-mieeco-red small">{{ $pesanans[0]->jenis }}</td>                                                                                                      
-                                                </tr>
-                                                <tr>
-                                                  <td class="small">Tanggal Pesan</td>
-                                                  <td class="small">:</td>
-                                                  <td class="text-mieeco-red small">{{ $pesanan->tanggal }}</td>                                                                                                      
-                                                </tr>
-                                              </tbody>
-                                            </table>
+                                    @if (empty($notif))
+                                        <div class="modal-body">
+                                          <div class="alert alert-danger" role="alert">
+                                            Keranjang anda kosong, silakan lakukan pemesanan
                                           </div>
-                                          <div class="show-cart">
-                                            <div class="card card-rounded mb-3">
-                                              <div class="cart-body">
-                                                <table class="table table-borderless">
-                                                  <thead>
-                                                      <tr>                            
-                                                          <th class="cart-page-menu">Menu</th>
-                                                          <th>Kuantitas</th>
-                                                          <th>Harga</th>
-                                                          <th>Jumlah Harga</th>
-                                                          <th>Aksi</th>
-                                                      </tr>
-                                                  </thead>
-                                                  <tbody>
-                                                      @foreach ($detail_pesanans as $detail_pesanan)
-                                                      <tr id="sid{{$detail_pesanan->id}}">                           
-                                                          <td>
-                                                              <div class="col-md-12 cart-page-namamenu">
-                                                                  {{ $detail_pesanan->menu->nama_menu }}
-                                                              </div>                                
-                                                              <div class="col-md-12 cart-page-catatan mt-2">
-                                                                  <i>{{ $detail_pesanan->catatan }}</i>
-                                                              </div>                                
-                                                          </td>
-                                                          <td class="cart-jumlah" align="center" value="{{ $detail_pesanan->jumlah }}">{{ $detail_pesanan->jumlah }}</td>
-                                                          <td class="cart-harga" align="left">Rp. {{ number_format($detail_pesanan->menu->harga) }}</td>
-                                                          <td align="left">Rp. {{ number_format($detail_pesanan->jml_harga) }}</td>
-                                                          <td>
-                                                              {{-- <form action="{{ url('cart') }}/{{ $detail_pesanan->id }}" method="post">
-                                                                  @csrf
-                                                                  @method('DELETE') --}}
-                                                                  <button href="javascript:void(0)" class="btn btn-danger btn-sm" onclick="deleteCart({{ $detail_pesanan->id }})"><i class="fas fa-trash-alt"></i></button>
-                                                              {{-- </form> --}}
-                                                          </td>
-                                                      </tr>                            
-                                                      @endforeach                                                      
-                                                  </tbody>
-                                              </table>
-                                              </div>
-                                            </div>
-                                          </div>                                                                                                                                                             
-                                        @endif
-                                      @endif
-                                    </div>
-                                    <div class="modal-footer">                                      
-                                      <p class="text-subtotal-mieeco">Total : </p>
-                                      <div id="totalajaxcall">
-                                        <div class="totalload">
-                                          <div class="text-subtotal-mieeco">Rp. {{ number_format($pesanan->total) }}</div>
                                         </div>
+                                        <div class="modal-footer">                                      
+                                          <p class="text-subtotal-mieeco">Total : </p>
+                                          <div id="totalajaxcall">
+                                            <div class="totalload">                                          
+                                              <div class="text-subtotal-mieeco">Rp. 0</div>
+                                            </div>
+                                          </div>
+                                          <button type="button" class="btn btn-outline-mieeco" data-dismiss="modal">Kembali</button>                                          
+                                        </div>
+                                    @else
+                                      <div class="modal-body">                                                                                                                    
+                                          <?php                                                                                                                                                                                                                                                         
+                                            $pesanan = \App\Pesanan::where('id_user', Auth::user()->id)->where('status', 0)->first();
+                                            $pesanans = DB::table('pesanans')->join('pelayanan','pesanans.id_layanan','=','pelayanan.id')->where('id_user', Auth::user()->id)->where('status', 0)->get();                                                                                    
+                                            if (!empty($pesanan)) {            
+                                                $detail_pesanans = \App\DetailPesanan::where('id_pesanan', $pesanan->id)->get();
+                                            }                                          
+                                          ?>                                        
+                                          {{-- @if (!empty($pesanan))                                           --}}
+                                            <div class="cart-info text-layanan-mieeco">
+                                              <table class="table table-sm table-borderless w-auto">
+                                                <tbody>
+                                                  <tr>
+                                                    <td class="small">Layanan</td>
+                                                    <td class="small">:</td>
+                                                    <td class="text-mieeco-red small">{{ $pesanans[0]->jenis }}</td>                                                                                                      
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="small">Tanggal Pesan</td>
+                                                    <td class="small">:</td>
+                                                    <td class="text-mieeco-red small">{{ $pesanan->tanggal }}</td>                                                                                                      
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </div>
+                                            <div class="show-cart">
+                                              <div class="card card-rounded mb-3">
+                                                <div class="cart-body">
+                                                  <table class="table table-borderless">
+                                                    <thead>
+                                                        <tr>                            
+                                                            <th class="cart-page-menu">Menu</th>
+                                                            <th>Kuantitas</th>
+                                                            <th>Harga</th>
+                                                            <th>Jumlah Harga</th>
+                                                            <th>Aksi</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach ($detail_pesanans as $detail_pesanan)
+                                                        <tr id="sid{{$detail_pesanan->id}}">                           
+                                                            <td>
+                                                                <div class="col-md-12 cart-page-namamenu">
+                                                                    {{ $detail_pesanan->menu->nama_menu }}
+                                                                </div>                                
+                                                                <div class="col-md-12 cart-page-catatan mt-2">
+                                                                    <i>{{ $detail_pesanan->catatan }}</i>
+                                                                </div>                                
+                                                            </td>
+                                                            <td class="cart-jumlah" align="center" value="{{ $detail_pesanan->jumlah }}">{{ $detail_pesanan->jumlah }}</td>
+                                                            <td class="cart-harga" align="left">Rp. {{ number_format($detail_pesanan->menu->harga) }}</td>
+                                                            <td align="left">Rp. {{ number_format($detail_pesanan->jml_harga) }}</td>
+                                                            <td>
+                                                                {{-- <form action="{{ url('cart') }}/{{ $detail_pesanan->id }}" method="post">
+                                                                    @csrf
+                                                                    @method('DELETE') --}}
+                                                                    <button href="javascript:void(0)" class="btn btn-danger btn-sm" onclick="deleteCart({{ $detail_pesanan->id }})"><i class="fas fa-trash-alt"></i></button>
+                                                                {{-- </form> --}}
+                                                            </td>
+                                                        </tr>                            
+                                                        @endforeach                                                      
+                                                    </tbody>
+                                                </table>
+                                                </div>
+                                              </div>
+                                            </div>                                                                                                                                                             
+                                          {{-- @endif --}}                                        
                                       </div>
-                                      <button type="button" class="btn btn-outline-mieeco" data-dismiss="modal">Kembali</button>
-                                      <a href="{{ url('check-out') }}" class="btn btn-cart">Buat Pesanan</a>
-                                    </div>
+                                      <div class="modal-footer">                                      
+                                        <p class="text-subtotal-mieeco">Total : </p>
+                                        <div id="totalajaxcall">
+                                          <div class="totalload">                                          
+                                            <div class="text-subtotal-mieeco">Rp. {{ number_format($pesanan->total) }}</div>
+                                          </div>
+                                        </div>
+                                        <button type="button" class="btn btn-outline-mieeco" data-dismiss="modal">Kembali</button>
+                                        <a href="{{ url('review-order') }}/{{ $pesanan->id_layanan }}" class="btn btn-cart">Buat Pesanan</a>
+                                      </div>
+                                    @endif                                                                        
                                   </div>
                                 </div>
                               </div>                                                            

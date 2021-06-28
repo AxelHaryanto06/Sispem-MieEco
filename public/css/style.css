@@ -458,6 +458,11 @@ ol.breadcrumb{
     margin-bottom: 0;
 }
 
+/* Tinjau Pesanan */
+.group-layanan{
+    font-weight: 500;
+}
+
 /* Profile */
 .profil-saya-header{
     padding-top: 20px;

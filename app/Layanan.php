@@ -10,6 +10,6 @@ class Layanan extends Model
 
     public function pesanan()
     {
-        return $this->hasMany('App\Pesanan','id_layanan');
+        return $this->hasMany('App\Pesanan');
     }
 }

@@ -30,13 +30,13 @@ Route::view('user/contact', 'contact');
 Route::view('login', 'login');
 Route::view('register', 'register');
 
-Route::group(['middleware' => ['auth','admin']], function() {
+Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin', function () {
         return view('welcome');
-        });
+    });
     Route::get('/admin/dashboard', 'DashboardController@index')->name('dashboard');
     Route::get('/admin/daftarmenu', 'MenuController@adminindex');
-    Route::get('/admin/daftarmenu/edit/{id}', 'MenuController@adminindexedit');    
+    Route::get('/admin/daftarmenu/edit/{id}', 'MenuController@adminindexedit');
     Route::get('/admin/daftarmenu/tambah', 'MenuController@adminindextambah');
     Route::post('/admin/daftarmenu/tambahmenu', 'MenuController@adminindexstore')->name('tambahmenu');
     Route::put('/admin/daftarmenu/update/{id}', 'MenuController@adminindexupdate');
@@ -54,6 +54,8 @@ Route::post('user/menu/pesan/{id}', 'PesanController@pesan');
 //Route::get('cart', 'PesanController@cart');
 Route::delete('/cart/{id}', 'PesanController@deleteCart');
 Route::get('check-out', 'PesanController@checkout');
+Route::get('review-order/{id}', 'PesanController@tinjaupesanan');
+Route::post('/review-order', 'PesanController@tinjaupesananstore');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

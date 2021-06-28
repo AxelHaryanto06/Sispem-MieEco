@@ -21,6 +21,11 @@ class Pesanan extends Model
     {
         return $this->hasMany('App\Pembayaran','id_pesanan');
     }
+    
+    public function layanan()
+    {
+        return $this->belongsTo('App\Layanan','id_layanan');
+    }
 
     public function alldata()
     {
