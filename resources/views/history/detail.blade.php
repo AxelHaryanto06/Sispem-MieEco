@@ -16,7 +16,29 @@
                 <div class="container">
                     <h5><i class="fas fa-shopping-cart"></i> Detail Pemesanan</h5>                
                     @if (!empty($pesanan))
-                    <p align="right">Tanggal Pesan : {{ $pesanan->tanggal }}</p>
+                    <div align="right" class="mt-4">
+                        <table class="table table-sm table-borderless w-auto">
+                            <tbody>
+                                <tr>
+                                    <td>Layanan</td>
+                                    <td>:</td>
+                                    <td>{{ $pesanan->layanan->jenis }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Tanggal Pesan</td>
+                                    <td>:</td>
+                                    <td>{{ $pesanan->tanggal }}</td>
+                                </tr>
+                                <tr>
+                                    <td>ID Pesan</td>
+                                    <td>:</td>
+                                    <td>ME201400{{ $pesanan->id }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    {{-- <p class="mt-2">Layanan : {{ $pesanan->layanan->jenis }}</p>
+                    <p align="right">Tanggal Pesan : {{ $pesanan->tanggal }}</p> --}}
                     <table class="table table-bordered">
                         <thead>
                             <tr class="table-active">                            
@@ -83,7 +105,7 @@
                         </form>
                         </div>
                     </div>
-                    <div class="card mt-4">
+                    <div class="card my-4">
                         <div class="card-header">
                             <h5><i class="fas fa-receipt"></i> Bukti Pembayaran</h5>
                         </div>

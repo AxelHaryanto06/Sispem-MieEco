@@ -27,9 +27,9 @@ class HistoryController extends Controller
 
     public function detail($id)
     {
-        $pesanan = Pesanan::where('id', $id)->first();        
+        $pesanan = Pesanan::where('id', $id)->with('layanan')->first();        
         $detail_pesanans = DetailPesanan::where('id_pesanan', $pesanan->id)->get();
-        $pembayaran = Pembayaran::where('id_user', Auth::user()->id)->where('id_pesanan', $pesanan->id)->first();;   
+        $pembayaran = Pembayaran::where('id_user', Auth::user()->id)->where('id_pesanan', $pesanan->id)->first();  
 
         return view('history.detail', compact('pesanan','detail_pesanans','pembayaran'));
     }
@@ -37,7 +37,7 @@ class HistoryController extends Controller
     public function detailbayar(Request $request, $id)
     {
         $pesanan = Pesanan::where('id', $id)->first();  
-        $pembayaran = Pembayaran::where('id_user', Auth::user()->id)->first();
+        $pembayaran = Pembayaran::where('id_user', Auth::user()->id)->where('id_pesanan', $pesanan->id)->first();          
         $detail_pesanans = DetailPesanan::where('id_pesanan', $pesanan->id)->get();                
 
         if ($request->hasfile('foto_bukti')) {

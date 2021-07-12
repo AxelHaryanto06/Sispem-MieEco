@@ -41,8 +41,8 @@
                                 </span>
                             @enderror
                         </div>
-                    </div>
-                    
+                    </div>                                
+
                     <div class="form-group row">
                         <label for="jenkel" class="col-md-3 col-form-label text-md-left perintah">{{ __('Jenis Kelamin') }}</label>
 
