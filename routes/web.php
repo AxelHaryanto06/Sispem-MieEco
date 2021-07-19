@@ -44,6 +44,12 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/pemesanan', 'PesanController@adminindex');
     Route::get('/admin/pemesanan/{id}', 'PesanController@admindetail');
     Route::post('/admin/konfirmasipemesanan', 'PesanController@adminkonfirmasi');
+    Route::get('/admin/layanan', 'LayananController@viewlayanan');
+    Route::get('/admin/layanan/tambah', 'LayananController@tambahlayanan');
+    Route::post('/admin/layanan/tambahlayanan', 'LayananController@tambahlayananstore');
+    Route::get('/admin/layanan/edit/{id}', 'LayananController@editlayanan');
+    Route::put('/admin/layanan/update/{id}', 'LayananController@updatelayanan');
+    Route::get('/admin/layanan/hapus/{id}', 'LayananController@deletelayanan');
 });
 Auth::routes();
 
@@ -64,4 +70,5 @@ Route::put('/profile/{id}', 'ProfileController@update');
 
 Route::get('history', 'HistoryController@index');
 Route::get('history/{id}', 'HistoryController@detail');
+Route::get('/history/bukti_pesan/{id}', 'HistoryController@bukti_pesan');
 Route::post('history/pembayaran/{id}', 'HistoryController@detailbayar');

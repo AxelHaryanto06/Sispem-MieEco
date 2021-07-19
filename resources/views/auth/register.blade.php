@@ -48,13 +48,13 @@
 
                         <div class="col-md-6 pilih-jenkel">
                             <div class="form-check pilihan">
-                                <input class="form-check-input" type="radio" name="jenkel" id="jenkel" value="Laki - Laki">
+                                <input class="form-check-input" type="radio" name="jenkel" id="jenkel" value="Laki - Laki" required>
                                 <label class="form-check-label" for="jenkel">
                                   Laki - Laki
                                 </label>
                             </div>
                             <div class="form-check pilihan">
-                                <input class="form-check-input" type="radio" name="jenkel" id="jenkel" value="Perempuan">
+                                <input class="form-check-input" type="radio" name="jenkel" id="jenkel" value="Perempuan" required>
                                 <label class="form-check-label" for="jenkel">
                                   Perempuan
                                 </label>

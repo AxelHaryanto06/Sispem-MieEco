@@ -160,13 +160,13 @@ class PesanController extends Controller
         $pesanan_tinjau->status = 1;
         $pesanan_tinjau->update();        
 
-        return redirect('/');
+        return redirect('history');
     }
 
     public function adminindex()
     {
         $pesanan = Pesanan::all();        
-        $data = Pesanan::with("pembayaran","detail_pesanan")->where('status', 1)->get();        
+        $data = Pesanan::with("pembayaran","detail_pesanan","layanan")->where('status', 1)->get();       
 
         return view('admin.pesan', compact('pesanan','data'));
     }

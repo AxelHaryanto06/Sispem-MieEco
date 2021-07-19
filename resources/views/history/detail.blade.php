@@ -16,6 +16,7 @@
                 <div class="container">
                     <h5><i class="fas fa-shopping-cart"></i> Detail Pemesanan</h5>                
                     @if (!empty($pesanan))
+                    <a href="{{ url('/history/bukti_pesan') }}/{{ $pesanan->id }}" class="btn btn-primary btn-cetak mt-3" target="_blank">Cetak Bukti Pesan</a>
                     <div align="right" class="mt-4">
                         <table class="table table-sm table-borderless w-auto">
                             <tbody>
@@ -30,15 +31,13 @@
                                     <td>{{ $pesanan->tanggal }}</td>
                                 </tr>
                                 <tr>
-                                    <td>ID Pesan</td>
+                                    <td>Kode Pesanan</td>
                                     <td>:</td>
                                     <td>ME201400{{ $pesanan->id }}</td>
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                    {{-- <p class="mt-2">Layanan : {{ $pesanan->layanan->jenis }}</p>
-                    <p align="right">Tanggal Pesan : {{ $pesanan->tanggal }}</p> --}}
+                    </div>                    
                     <table class="table table-bordered">
                         <thead>
                             <tr class="table-active">                            

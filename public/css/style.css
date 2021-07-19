@@ -2,6 +2,7 @@
 *{
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    padding: 0;
 }
 
 html, body{
@@ -285,9 +286,9 @@ input[type='radio']:checked:after {
     margin-top: 18px;
 }
 
-.gambarhome{
+/* .gambarhome{
     margin-left: 92px;
-}
+} */
 
 .fas-hidden{
     color: transparent;
@@ -561,6 +562,18 @@ div.text-subtotal-mieeco{
     text-align: center;
 }
 
+.main{
+    padding-top: 20px;
+}
+
+.btn-cetak{
+    width: auto !important;
+    color: black !important;
+    background-color: white !important;
+    border: 2px solid #FF0000 !important;
+    border-radius: 5px !important;
+}
+
 /* Pesan - Admin */
 .pesan-judul {
     padding-left: 8px;
@@ -570,7 +583,7 @@ div.text-subtotal-mieeco{
 .footer{
     background-color: #FEC921;
     padding: 27px 0;
-    height: 250px;
+    height: 260px;
     position: relative !important;
     bottom: 0 !important;
 }

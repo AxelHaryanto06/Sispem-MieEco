@@ -23,7 +23,9 @@
                                         <th>ID Pesanan</th>
                                         <th>Atas Nama</th>
                                         <th>Tanggal Pesan</th>
+                                        <th>Jam</th>
                                         <th>Total</th>
+                                        <th>Layanan</th>
                                         <th>Konfirmasi Status</th>
                                         <th>Aksi</th>                                                                              
                                     </thead>
@@ -37,7 +39,9 @@
                                             <td>ME201400{{ $dt->id }}</td>
                                             <td>{{ $dt->user->name }}</td>
                                             <td>{{ $dt->tanggal }}</td>
+                                            <td>{{ $dt->jam }}</td>
                                             <td>Rp. {{ number_format($dt->total) }}</td>
+                                            <td>{{ $dt->layanan->jenis }}</td>
                                             <td>                                            
                                                 <div class="form-check">
                                                     <form action="/admin/konfirmasipemesanan" method="POST">
@@ -48,7 +52,7 @@
                                                         @if ($dt->pembayaran[0]->status_bayar == "1")
                                                             Sudah Dibayar
                                                         @else
-                                                            Belom Dibayar
+                                                            Belum Dibayar
                                                         @endif
                                                     </form>
                                                 </div>

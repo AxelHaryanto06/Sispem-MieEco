@@ -12,7 +12,7 @@
                 </nav>
             </div>
             <div class="col-md-12 mt-2">
-                <div class="container">
+                <div class="container main">
                     <h5><i class="fas fa-history"></i> Riwayat Pemesanan</h5>
                     <div class="alert alert-warning order-announcement mt-2" role="alert">
                         Pemesanan dengan status Belum Dibayar tidak akan dilakukan pembuatan
@@ -36,10 +36,10 @@
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $pesanan->tanggal }}</td>
                                 <td>
-                                    @if ($pesanan->status == 1)
-                                        Belum Dibayar
-                                    @else
+                                    @if ($pesanan->pembayaran[0]->status_bayar == "1")
                                         Sudah Dibayar
+                                    @else
+                                        Belum Dibayar
                                     @endif
                                 </td>
                                 <td>Rp. {{ number_format($pesanan->total) }}</td>

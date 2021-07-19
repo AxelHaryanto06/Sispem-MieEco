@@ -10,6 +10,7 @@ use App\Pembayaran;
 use Carbon\Carbon;
 use Auth;
 use Alert;
+use PDF;
 
 class HistoryController extends Controller
 {
@@ -20,7 +21,7 @@ class HistoryController extends Controller
 
     public function index()
     {
-        $pesanans = Pesanan::where('id_user', Auth::user()->id)->where('status', '!=',0)->get();
+        $pesanans = Pesanan::where('id_user', Auth::user()->id)->where('status', '!=',0)->with('pembayaran')->get();
 
         return view('history.index', compact('pesanans'));
     }
@@ -53,5 +54,14 @@ class HistoryController extends Controller
         $pembayaran->save();
 
         return view('history.detail', compact('pesanan','detail_pesanans','pembayaran','cek_pembayaran'));
+    }
+
+    public function bukti_pesan($id)
+    {
+        $pesanan = Pesanan::where('id', $id)->with('layanan')->first();
+        $detail_pesanans = DetailPesanan::where('id_pesanan', $pesanan->id)->get();        
+
+        $pdf = PDF::loadview('history.buktipesanan_pdf',['buktipesanan'=>$detail_pesanans], compact('pesanan','detail_pesanans'));        
+        return $pdf->download('bukti-pesanan-pdf');
     }
 }
