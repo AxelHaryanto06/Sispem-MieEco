@@ -58,6 +58,14 @@ li {
     border-bottom: 2px solid #FF0000;
 }
 
+.navigation-link{
+    color: black !important;
+}
+
+.navigation-text{
+    background-color: #FEC921;
+}
+
 .navbar-text{
     font-weight: 600;
 }

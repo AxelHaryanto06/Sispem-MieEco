@@ -1,21 +1,21 @@
-<nav class="navbar navbar-expand-lg navigation-bar">
+<nav class="navbar navbar-expand-lg navbar-light navigation-bar">
   <div class="container">
   <a class="navbar-brand" href="/">
     <img src="/img/mieeco2 2.svg" width="219" height="41" class="d-inline-block align-top" alt="">
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler navigation-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarText">
+  <div class="collapse navbar-collapse navigation-text" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link navigation-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/user/menu">Menu</a>
+        <a class="nav-link navigation-link" href="/user/menu">Menu</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/user/contact">Contact</a>
+        <a class="nav-link navigation-link" href="/user/contact">Contact</a>
       </li>
     </ul>
     <div class="navbar-text">

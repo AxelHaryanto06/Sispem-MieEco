@@ -68,7 +68,7 @@
               <a href="{{ url('admin/profile') }}" class="btn btn-default btn-flat menu-sidebar">Profile</a>
             </div>
             <div class="pull-right">
-            <a href="{{ url('logout') }}" class="btn btn-default btn-flat menu-sidebar">Sign out</a>
+            <a href="{{ url('logout') }}" class="btn btn-default btn-flat menu-sidebar">Logout</a>
             </div>
           </li>
         </ul>
