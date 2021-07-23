@@ -1,57 +1,54 @@
-<section class="footer">
-    <div class="container">
+<footer class="footer">
+    <div class="container pt-5 border-bottom">
         <div class="row">
-            <div class="col-sm-12 col-md-3">
+            <div class="col-md-3 col-sm-12 mb-3 text-center">
                 <div class="logo">
                     <a href="/" class="logo-mieeco">
                         <img src="/img/mieeco2 2.svg" alt="">
                     </a>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-9 hidden-xs">
-                <div class="row">
-                <div class="col-sm-4 col-md-2">
-                    <div class="footer-navbar">
-                        <ul class="sitemaplist">
-                            <li>
-                                <a href="/">Home</a>
-                            </li>
-                            <li>
-                                <a href="/user/menu">Menu</a>
-                            </li>
-                            <li>
-                                <a href="user/contact">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="col-md-9 col-sm-12">                
+                <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">                    
+                    <ul class="list-group sitemaplist">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <a href="/">Home</a>
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <a href="/user/menu">Menu</a>
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <a href="user/contact">Contact</a>
+                        </li>
+                    </ul>                    
                 </div>
-                <div class="col-sm-4 col-md-2">
-                </div>
-                <div class="col-sm-4">
-                    <h4 class="text-claps">Ikuti Kami</h4>
-                        <a href="https://www.instagram.com/mieecopurwokerto/" class="medsos" target="_blank">
-                            <div>
-                                <i class="fab fa-instagram"></i>
-                                Instagram
-                            </div>                                                        
-                        </a>                        
-                        <a href="#" class="medsos">
-                            <div class="facebook">
-                                <i class="fab fa-facebook-f"></i>
-                                Facebook
-                            </div>                                                        
-                        </a>                        
-                </div>
-                <div class="col-sm-4">
-                    <h4 class="text-claps">Tersedia di</h4>
-                        <img src="/img/gofood-logo.png" alt="">
-                        <img src="/img/grabfood-logo.png" alt="" class="grab-food">   
-                </div>
-                </div>                
-            </div>
-        </div>
-                <div class="me-line">
-                    <div class="col-12 copyright">&copy; 2021 Mie Eco</div>
+                <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3"></div>
+                <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">                    
+                    <h5 class="mb-4 font-weight-bold">Ikuti Kami</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <a class="medsos" target="_blank" href="https://www.instagram.com/mieecopurwokerto/"><i class="fab fa-instagram"></i> Instagram</a>
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <a class="medsos" href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                        </li>                        
+                    </ul>                    
                 </div>            
+                <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">                    
+                    <h5 class="mb-4 font-weight-bold">Tersedia di</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <img src="/img/gofood-logo.png" alt="">
+                            <img src="/img/grabfood-logo.png" alt="" class="grab-food">
+                        </li>                        
+                    </ul>                    
+                </div>            
+            </div>            
+        </div>
+        <div class="col-md-12 me-line">
+            <div class="py-4 d-flex justify-content-center align-items-center">
+                &copy; 2021 Mie Eco
+            </div>            
+        </div>                         
     </div>
-</section>
+</footer>
