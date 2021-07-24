@@ -24,6 +24,11 @@
           <a href="{{ url('/admin/pemesanan') }}">
             <i class="fa fa-shopping-cart"></i> <span>Pemesanan</span>            
           </a>
+        </li>
+        <li>
+          <a href="{{ url('/admin/laporanpenjualan') }}">
+            <i class="glyphicon glyphicon-download-alt"></i> <span>Laporan Penjualan</span>            
+          </a>
         </li>        
         <li>
           <a href="{{ route('logout') }}">

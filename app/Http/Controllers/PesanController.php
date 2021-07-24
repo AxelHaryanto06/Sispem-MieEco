@@ -13,6 +13,7 @@ use App\Layanan;
 use Carbon\Carbon;
 use Auth;
 use Alert;
+use PDF;
 
 class PesanController extends Controller
 {
@@ -166,7 +167,7 @@ class PesanController extends Controller
     public function adminindex()
     {
         $pesanan = Pesanan::all();        
-        $data = Pesanan::with("pembayaran","detail_pesanan","layanan")->where('status', 1)->get();       
+        $data = Pesanan::with("pembayaran","detail_pesanan","layanan")->where('status', 1)->latest()->get();       
 
         return view('admin.pesan', compact('pesanan','data'));
     }
@@ -195,5 +196,21 @@ class PesanController extends Controller
         $detail_pesanans = DetailPesanan::where('id_pesanan', $pesanan->id)->get();
         $pembayaran = Pembayaran::where('id_pesanan', $pesanan->id)->get();        
         return view('admin.detailpesan', compact('detail_pesanans','pembayaran'));
+    }
+
+    public function adminpenjualan()
+    {
+        $data_penjualan = Pesanan::with('layanan')->join('pembayarans', 'pesanans.id', '=', 'pembayarans.id_pesanan')->where('status_bayar', 1)->latest('pembayarans.created_at')->get();
+
+        return view('admin.page_laporanpenjualan', compact('data_penjualan'));
+    }
+    
+    public function admincetak()
+    {
+        //$data_pesanan = DB::table('pesanans')->join('pembayarans', 'pesanans.id', '=', 'pembayarans.id_pesanan')->where('status_bayar', 1)->get();
+        $data_pesanan = Pesanan::with('layanan')->join('pembayarans', 'pesanans.id', '=', 'pembayarans.id_pesanan')->where('status_bayar', 1)->get();
+        
+        $pdf = PDF::loadview('admin.laporanpenjualan',['laporanpenjualan'=>$data_pesanan], compact('data_pesanan'));
+        return $pdf->stream();
     }
 }

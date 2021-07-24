@@ -61,7 +61,7 @@ class HistoryController extends Controller
         $pesanan = Pesanan::where('id', $id)->with('layanan')->first();
         $detail_pesanans = DetailPesanan::where('id_pesanan', $pesanan->id)->get();        
 
-        $pdf = PDF::loadview('history.buktipesanan_pdf',['buktipesanan'=>$detail_pesanans], compact('pesanan','detail_pesanans'));        
+        $pdf = PDF::loadview('history.buktipesanan_pdf',['buktipesanan'=>$detail_pesanans], compact('pesanan','detail_pesanans'));
         return $pdf->download('bukti-pesanan-pdf');
     }
 }

@@ -1,5 +1,5 @@
 @extends('layouts.master')
- 
+
 @section('content')
 <section class="content">
         <div class="row">
@@ -8,7 +8,7 @@
             <div class="box box-warning">
                 <div class="box-header">
                     <p>
-                        <button class="btn btn-sm btn-flat btn-warning btn-refresh"><i class="fa fa-refresh"></i> Refresh</button>                    
+                        <button class="btn btn-sm btn-flat btn-warning btn-refresh"><i class="fa fa-refresh"></i> Refresh</button>                        
                     </p>
                     <p>
                         Sebelum konfirmasi pemesanan pastikan pelanggan sudah membayar dengan cara memeriksa bukti pembayaran dan rekening jika diperlukan
@@ -54,7 +54,7 @@
                                                         @else
                                                             Belum Dibayar
                                                         @endif
-                                                    </form>
+                                                    </form> 
                                                 </div>
                                             </td>
                                             <td>
