@@ -56,6 +56,8 @@
 <!-- <script src="https://datatables.yajrabox.com/js/handlebars.js"></script> -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.3.1/handlebars.js"></script>
 
+<script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+
 <script type="text/javascript">
   $(document).ready(function(){
     $(".preloader").fadeOut();

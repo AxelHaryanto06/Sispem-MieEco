@@ -636,3 +636,14 @@ div.text-subtotal-mieeco{
     margin-top: 10px;
     width: 100%;
 }
+
+/* Admin */
+.date_range{
+    padding-left: 0px;    
+}
+
+.btn-cetak-laporan{
+    border-radius: 0 !important;
+    background-color: #3c8dbc;
+    color: white;
+}

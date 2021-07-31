@@ -200,17 +200,30 @@ class PesanController extends Controller
 
     public function adminpenjualan()
     {
-        $data_penjualan = Pesanan::with('layanan')->join('pembayarans', 'pesanans.id', '=', 'pembayarans.id_pesanan')->where('status_bayar', 1)->latest('pembayarans.created_at')->get();
-
+        // $data_penjualan = Pesanan::with('layanan')->join('pembayarans', 'pesanans.id', '=', 'pembayarans.id_pesanan')->where('status_bayar', 1)->latest('pembayarans.created_at')->get();
+        $data_penjualan = Pesanan::whereHas('pembayaran', function($query) {
+            $query->where('status_bayar', '=', 1);
+            })->with('layanan')->latest()->get();
+        
         return view('admin.page_laporanpenjualan', compact('data_penjualan'));
     }
     
     public function admincetak()
     {
         //$data_pesanan = DB::table('pesanans')->join('pembayarans', 'pesanans.id', '=', 'pembayarans.id_pesanan')->where('status_bayar', 1)->get();
-        $data_pesanan = Pesanan::with('layanan')->join('pembayarans', 'pesanans.id', '=', 'pembayarans.id_pesanan')->where('status_bayar', 1)->get();
+        $data_pesanan = Pesanan::whereHas('pembayaran', function($query) {
+            $query->where('status_bayar', '=', 1);
+            })->with('layanan')->get();
         
-        $pdf = PDF::loadview('admin.laporanpenjualan',['laporanpenjualan'=>$data_pesanan], compact('data_pesanan'));
+        $dine_in = Pesanan::whereHas('pembayaran', function($query) {
+            $query->where('status_bayar', '=', 1);
+            })->where('id_layanan', 1)->count();
+
+        $take_away = Pesanan::whereHas('pembayaran', function($query) {
+            $query->where('status_bayar', '=', 1);
+            })->where('id_layanan', 2)->count();
+        
+        $pdf = PDF::loadview('admin.laporanpenjualan',['laporanpenjualan'=>$data_pesanan], compact('data_pesanan','dine_in','take_away'));
         return $pdf->stream();
     }
 }
