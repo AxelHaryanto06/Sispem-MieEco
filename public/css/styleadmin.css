@@ -1,8 +1,12 @@
 .date_range{
-    padding-left: 0px;    
+    margin-top: 10px;
 }
 
 .laporan{
     padding-top: 7px;
     text-align: align;
+}
+
+.text-konfirmasi-pesanan{
+    margin-top: 10px;
 }

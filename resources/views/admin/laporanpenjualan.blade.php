@@ -9,15 +9,21 @@
     <style>
         .line{
             border-top: 1px solid;
+            margin-bottom: 10px;
+        }
+
+        .periode{
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <img src="{{ public_path("/img/mie-eco-black.png") }}" width="219" height="41" class="d-inline-block align-top logo-admin" alt="">
     <p>Jln. Pramuka No.232 A, Purwokerto, Jawa Tengah</p>
-    <div class="line"></div>
-    <h4 class="text-center mt-3">Laporan Penjualan</h4>
-    <table class="table table-bordered mt-3">
+    <p class="line"></p>
+    <p><h4 class="text-center">Laporan Penjualan</h4></p>
+    <p class="periode">Periode {{ $tglawal }} sampai {{ $tglakhir }}</p>
+    <table class="table table-bordered table-laporan mt-3">
         <thead>
             <tr class="text-center">                            
                 <th>No</th>

@@ -208,22 +208,42 @@ class PesanController extends Controller
         return view('admin.page_laporanpenjualan', compact('data_penjualan'));
     }
     
-    public function admincetak()
+    public function admincetak($tglawal, $tglakhir)
     {
         //$data_pesanan = DB::table('pesanans')->join('pembayarans', 'pesanans.id', '=', 'pembayarans.id_pesanan')->where('status_bayar', 1)->get();
         $data_pesanan = Pesanan::whereHas('pembayaran', function($query) {
             $query->where('status_bayar', '=', 1);
-            })->with('layanan')->get();
+            })->with('layanan')->whereBetween('tanggal',[$tglawal, $tglakhir])->get();
         
         $dine_in = Pesanan::whereHas('pembayaran', function($query) {
             $query->where('status_bayar', '=', 1);
-            })->where('id_layanan', 1)->count();
+            })->where('id_layanan', 1)->whereBetween('tanggal',[$tglawal, $tglakhir])->count();
 
         $take_away = Pesanan::whereHas('pembayaran', function($query) {
             $query->where('status_bayar', '=', 1);
-            })->where('id_layanan', 2)->count();
-        
-        $pdf = PDF::loadview('admin.laporanpenjualan',['laporanpenjualan'=>$data_pesanan], compact('data_pesanan','dine_in','take_away'));
+            })->where('id_layanan', 2)->whereBetween('tanggal',[$tglawal, $tglakhir])->count();
+                
+        // dd("From : ".$tglawal, "To : ".$tglakhir);
+
+        $pdf = PDF::loadview('admin.laporanpenjualan',['laporanpenjualan'=>$data_pesanan], compact('data_pesanan','dine_in','take_away','tglawal','tglakhir'));
         return $pdf->stream();
+    }
+
+    public function admincetaklaporanpesanan($tglawal, $tglakhir)
+    {
+        $data_pesanan = DetailPesanan::whereHas('pesanan', function($query) use ($tglawal, $tglakhir){
+            $query->whereHas('pembayaran', function($query2) use ($tglawal, $tglakhir){
+                $query2->where('status_bayar', '=', 1);
+            })->whereBetween('tanggal',[$tglawal, $tglakhir]);
+        })->with('menu')->get();
+        
+        $menu_terbanyak = DetailPesanan::whereHas('pesanan', function($query) use ($tglawal, $tglakhir){
+            $query->whereHas('pembayaran', function($query2) use ($tglawal, $tglakhir){
+                $query2->where('status_bayar', '=', 1);
+            })->whereBetween('tanggal',[$tglawal, $tglakhir]);
+        })->with('menu')->orderBy('jumlah', 'DESC')->first();
+        
+        $pdf = PDF::loadview('admin.laporanpemesanan',['laporanpemesanan'=>$data_pesanan], compact('data_pesanan','tglawal','tglakhir','menu_terbanyak'));
+        return $pdf->download('laporan-pemesanan');
     }
 }

@@ -7,13 +7,20 @@
             <h4 class="pesan-judul">Pemesanan</h4>
             <div class="box box-warning">
                 <div class="box-header">
-                    <p>
-                        <button class="btn btn-sm btn-flat btn-warning btn-refresh"><i class="fa fa-refresh"></i> Refresh</button>                        
-                    </p>
-                    <p>
+                    <button class="btn btn-sm btn-flat btn-warning btn-refresh"><i class="fa fa-refresh"></i> Refresh</button>                        
+                    <div class="form-inline date_range">
+                        <div class="input-group">
+                            <input type="date" name="tglawal" id="tglawal" class="form-control" required>
+                        </div>                
+                        <div class="input-group">
+                            <input type="date" name="tglakhir" id="tglakhir" class="form-control" required>
+                        </div>
+                        <a href="" onclick="return laporanPemesanan()" target="_blank" class="btn btn-primary" id="cetak"><i class="fa fa-print" aria-hidden="true"></i> Cetak Laporan Pemesanan</a>
+                    </div>
+                    <p class="text-konfirmasi-pesanan">
                         Sebelum konfirmasi pemesanan pastikan pelanggan sudah membayar dengan cara memeriksa bukti pembayaran dan rekening jika diperlukan
                     </p>
-                </div>        
+                </div>     
                 @if (!empty($data))
                     <div class="box-body">
                         <div class="table-responsive">

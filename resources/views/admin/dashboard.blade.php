@@ -17,50 +17,54 @@
 
     <section class="content">
         <div class="row">
-            <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-aqua">
-                <div class="inner">
-                <h3>{{ $total_pesanan }}</h3>
-    
-                <p>Total Pesanan</p>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-aqua"><i class="ion-bag"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Total Pesanan</span>
+                    <span class="info-box-number">{{ $total_pesanan }}</span>
                 </div>
-                <div class="icon">
-                <i class="ion ion-bag"></i>
+                <!-- /.info-box-content -->
                 </div>
-                {{-- <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> --}}
+                <!-- /.info-box -->
             </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-green">
-                <div class="inner">
-                <h3>{{ $total_menu }}</h3>
-    
-                <p>Total Menu</p>
+            
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-yellow"><i class="ion-ios-people-outline"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Total Pengguna</span>
+                    <span class="info-box-number">{{ $total_pengguna }}</span>
                 </div>
-                <div class="icon">
-                <i class="ion ion-stats-bars"></i>
+                <!-- /.info-box-content -->
                 </div>
-                {{-- <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> --}}
+                <!-- /.info-box -->
             </div>
-            </div>
-            <!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-yellow">
-                <div class="inner">
-                <h3>{{ $total_pengguna }}</h3>
-    
-                <p>Jumlah Pengguna</p>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-green"><i class="ion-bookmark"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Total Menu</span>
+                    <span class="info-box-number">{{ $total_menu }}</span>
                 </div>
-                <div class="icon">
-                <i class="ion ion-person-add"></i>
+                <!-- /.info-box-content -->
                 </div>
-                {{-- <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> --}}
-            </div>
-            </div>
+                <!-- /.info-box -->
+            </div>           
+            
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                    <span class="info-box-icon bg-red"><i class="ion-ios-cart-outline"></i></span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Total Layanan</span>
+                    <span class="info-box-number">{{ $total_layanan }}</span>
+                </div>
+                <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>           
+
             <!-- ./col -->
             {{-- <div class="col-lg-3 col-xs-6">
             <!-- small box -->

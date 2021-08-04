@@ -8,17 +8,16 @@
             <div class="box box-warning">
                 <div class="box-header">                    
                     <button class="btn btn-sm btn-flat btn-warning btn-refresh"><i class="fa fa-refresh"></i> Refresh</button>
-                    <p>
-                        <div class="form-group col-md-2 date_range">                            
-                            <select class="form-control" id="date_range" onchange="getSelectValue()">
-                                <option value="hariini" id="1">Hari Ini</option>
-                                <option value="kemarin" id="2">Kemarin</option>
-                                <option value="bulanini">Bulan Ini</option>
-                                <option value="bulanlalu">Bulan Lalu</option>                                
-                            </select>
-                        </div>                   
-                        <a href="/admin/laporanpenjualan/cetak" class="btn btn-sm btn-flat btn-primary" target="_blank"><i class="fa fa-download"></i> Cetak Laporan</a>                        
-                    </p>
+                    <div class="form-inline date_range">
+                        <div class="input-group">
+                            <input type="date" name="tglawal" id="tglawal" class="form-control" required>
+                        </div>                
+                        <div class="input-group">
+                            <input type="date" name="tglakhir" id="tglakhir" class="form-control" required>
+                        </div>
+                        {{-- <a href="/admin/laporanpenjualan/cetak" class="btn btn-sm btn-flat btn-primary" target="_blank"><i class="fa fa-download"></i> Cetak Laporan</a>                         --}}                        
+                        <a href="" onclick="return PilihTanggal()" target="_blank" class="btn btn-primary" id="cetak"><i class="fa fa-print" aria-hidden="true"></i> Cetak Laporan</a>
+                    </div>
                 </div>
                 <div class="box-body">
                     <div class="table-responsive">

@@ -25,22 +25,27 @@ $(document).ready(function() {
     console.log(viewTime);
 });   
 
-function getSelectValue() {
-    var selectedValue = document.getElementById("date_range").value;
-    
-    if (selectedValue == "hariini") {
-        // var date = moment().format('YYYY-MM-DD');
-        var selectvalue = document.getElementById("1").value = moment().format('YYYY-MM-DD');
+function PilihTanggal() {
+    let tgl_awal = document.getElementById('tglawal').value;
+    let tgl_akhir = document.getElementById('tglakhir').value;
+
+    if (tgl_awal === "" && tgl_akhir === "") {
+        alert("Tanggal Tidak Boleh Kosong !");
+        return false;      
+    } else {
+        window.open('/admin/laporanpenjualan/cetak/'+ document.getElementById('tglawal').value + '/' + document.getElementById('tglakhir').value, '_blank');
+        return true;
     }
-    
-    if (selectedValue == "kemarin") {
-        // var date = moment().subtract(1, 'days').format('YYYY-MM-DD');
-        var selectvalue = document.getElementById("2").value = moment().subtract(1, 'days').format('YYYY-MM-DD');
+}
+function laporanPemesanan() {
+    let tgl_awal = document.getElementById('tglawal').value;
+    let tgl_akhir = document.getElementById('tglakhir').value;
+
+    if (tgl_awal === "" && tgl_akhir === "") {
+        alert("Tanggal Tidak Boleh Kosong !");
+        return false;      
+    } else {
+        window.open('/admin/laporanpemesanan/cetak/'+ document.getElementById('tglawal').value + '/' + document.getElementById('tglakhir').value, '_blank');
+        return true;
     }
-    // var harini = moment().format('YYYY-MM-DD');
-    // var viewHariini = document.getElementById("hariini").value = harini;
-    
-    // var kemarin = moment().subtract(1, 'days').format('YYYY-MM-DD');
-    // var viewKemarin = document.getElementById("kemarin").value = kemarin;
-    console.log(selectvalue);
 }

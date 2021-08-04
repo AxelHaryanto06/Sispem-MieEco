@@ -43,9 +43,10 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/daftarmenu/hapus/{id}', 'MenuController@adminindexhapus');
     Route::get('/admin/pemesanan', 'PesanController@adminindex');
     Route::get('/admin/pemesanan/{id}', 'PesanController@admindetail');
+    Route::get('/admin/laporanpemesanan/cetak/{tglawal}/{tglakhir}', 'PesanController@admincetaklaporanpesanan');
     Route::post('/admin/konfirmasipemesanan', 'PesanController@adminkonfirmasi');
     Route::get('/admin/laporanpenjualan', 'PesanController@adminpenjualan');
-    Route::get('/admin/laporanpenjualan/cetak', 'PesanController@admincetak');
+    Route::get('/admin/laporanpenjualan/cetak/{tglawal}/{tglakhir}', 'PesanController@admincetak');
     Route::get('/admin/layanan', 'LayananController@viewlayanan');
     Route::get('/admin/layanan/tambah', 'LayananController@tambahlayanan');
     Route::post('/admin/layanan/tambahlayanan', 'LayananController@tambahlayananstore');

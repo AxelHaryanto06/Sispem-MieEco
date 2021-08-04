@@ -50,13 +50,13 @@
                             <div class="form-check pilihan">
                                 <input class="form-check-input" type="radio" name="jenkel" id="jenkel" value="Laki - Laki" required>
                                 <label class="form-check-label" for="jenkel">
-                                  Laki - Laki
+                                    Laki - Laki
                                 </label>
                             </div>
                             <div class="form-check pilihan">
                                 <input class="form-check-input" type="radio" name="jenkel" id="jenkel" value="Perempuan" required>
                                 <label class="form-check-label" for="jenkel">
-                                  Perempuan
+                                    Perempuan
                                 </label>
                             </div>
 
