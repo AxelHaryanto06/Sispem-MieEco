@@ -22,6 +22,11 @@
                 <td>{{ $pesanan->tanggal }}</td>
             </tr>
             <tr>
+                <td>Jam</td>
+                <td>:</td>
+                <td>{{ $pesanan->jam }}</td>
+            </tr>
+            <tr>
                 <td>Kode Pesanan</td>
                 <td>:</td>
                 <td>ME201400{{ $pesanan->id }}</td>

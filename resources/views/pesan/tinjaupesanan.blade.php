@@ -52,8 +52,9 @@
                                         <div class="form-group">
                                             <label for="ordertime"><strong>Jam</strong></label>
                                             <div class="input-group mb-3">
-                                                <input type="time" min="10:00" max="20:30" id="timepick" name="jam" class="form-control" aria-label="Time Picker" aria-describedby="basic-addon2">                                        
+                                                <input type="time" min="09:30" max="16:00" id="timepick" name="jam" class="form-control" aria-label="Time Picker" aria-describedby="basic-addon2">                                        
                                             </div>
+                                            <label for=""><strong>*Jam Pemesanan 09:30 - 16.00</strong></label>
                                         </div>
                                     </div>
                                 </div>

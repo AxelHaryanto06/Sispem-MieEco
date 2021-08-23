@@ -5,9 +5,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="daftar-menu">Daftar Menu</h1>
+                    <h1 class="daftar-menu text-center">Daftar Menu</h1>
                 </div>                
-            </div>            
+            </div>                  
         </div>
     </section>
     <section class="daftar-menu">

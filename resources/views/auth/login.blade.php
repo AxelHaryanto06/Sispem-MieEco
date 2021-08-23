@@ -62,7 +62,7 @@
             <button type="submit" class="btn btn-primary btn-submit">
                 {{ __('Login') }}
             </button>
-            @if (Route::has('password.request'))
+            {{-- @if (Route::has('password.request'))
             <div class="row">
                 <div class="col-md-12 text-forgot">
                     <a class="btn btn-link btn-forgot" href="{{ route('password.request') }}">
@@ -70,13 +70,13 @@
                     </a>
                 </div>
             </div>
-            @endif                            
+            @endif                             --}}
         </div>
         </form>
         <div class="toregister">
             <div class="row">
                 <div class="col-md-12">
-                    <p class="belumpunya">Belum punya akun ?<a class="linktoregister" href="{{ url('register') }}"> Register</a></p>
+                    <p class="belumpunya mt-4">Belum punya akun ?<a class="linktoregister" href="{{ url('register') }}"> Register</a></p>
                 </div>
             </div>
         </div>

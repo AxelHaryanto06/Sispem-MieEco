@@ -97,12 +97,12 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="no_hp" class="col-md-3 col-form-label text-md-left perintah">{{ __('Telepon') }}</label>
+                        <label for="telepon" class="col-md-3 col-form-label text-md-left perintah">{{ __('Telepon') }}</label>
 
                         <div class="col-md-6">
-                            <input id="no_hp" type="text" class="form-control @error('no_hp') is-invalid @enderror" name="no_hp" placeholder="Masukkan Nomor Anda" value="{{ old('no_hp') }}" required autocomplete="no_hp">
+                            <input id="telepon" type="text" class="form-control @error('telepon') is-invalid @enderror" name="telepon" placeholder="Masukkan Nomor Anda" value="{{ old('telepon') }}" required autocomplete="telepon">
 
-                            @error('no_hp')
+                            @error('telepon')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

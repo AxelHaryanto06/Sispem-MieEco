@@ -19,7 +19,7 @@ function deleteCart(id) {
 
 $(document).ready(function() {
     //var time = moment().format('HH:mm');
-    var time = moment().format('HH:mm');
+    var time = moment().add(30, 'minutes').format('HH:mm');
     var viewTime = document.getElementById("timepick").value = time;
     //document.getElementById("timepick").value = time;
     console.log(viewTime);

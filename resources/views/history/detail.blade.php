@@ -31,6 +31,11 @@
                                     <td>{{ $pesanan->tanggal }}</td>
                                 </tr>
                                 <tr>
+                                    <td>Jam</td>
+                                    <td>:</td>
+                                    <td>{{ $pesanan->jam }}</td>
+                                </tr>
+                                <tr>
                                     <td>Kode Pesanan</td>
                                     <td>:</td>
                                     <td>ME201400{{ $pesanan->id }}</td>
@@ -86,14 +91,17 @@
                                 <div class="col-sm-10">                                  
                                 <div class="row">
                                     <div class="col-sm-5 responsive">
-                                        <img style="height: 200px; width: 270px; padding: 10px" src="http://syspwt.com/sispemtik-via-gunungmalang/assets/img/bukti/contoh1.jpeg" class="img-contoh" alt="Responsive image">
+                                        <img style="height: 200px; width: 270px; padding: 10px" src="/img/contoh1.jpeg" class="img-contoh" alt="Contoh Bukti Pembayaran">
                                     </div>
                                     <div class="col-sm-5">
-                                        <div class="custom-file">
+                                        <div class="form-group">                                            
+                                            <input type="file" class="form-control-file" id="foto_bukti" name="foto_bukti">
+                                        </div>
+                                        {{-- <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="foto_bukti" name="foto_bukti">
                                             <label label class="custom-file-label" for="image">Pilih Foto</label>
-                                        </div>
-                                        <small><p style="color:red; padding: 5px">Ukuran file maksimal 2 MB.</p></small>
+                                        </div> --}}
+                                        {{-- <small><p style="color:red; padding: 5px">Ukuran file maksimal 2 MB.</p></small> --}}
                                     </div>
                                 </div>        
                                 <div class="col-sm-5 mt-3 text-center">
