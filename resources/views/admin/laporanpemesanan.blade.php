@@ -74,7 +74,7 @@
             </tr>                            
             @endforeach
             <tr>
-                <td colspan="6" align="right"><strong>Total Penjualan :</strong></td>
+                <td colspan="6" align="right"><strong>Total :</strong></td>
                 <td align="right"><strong>Rp. {{ number_format($data_pesanan->sum('jml_harga')) }}</strong></td>                            
             </tr>                     
         </tbody>
@@ -93,6 +93,23 @@
                 <td class="tulisan-tengah">{{ $menu_terbanyak->jumlah }}</td>
             </tr>
         </tbody>
-    </table>    
+    </table>
+    <table align="right" class="table table-sm table-borderless w-auto">
+        <thead>
+            <tr>
+                <th>Purwokerto,</th>                
+                <th>{{ $tanggal_now }}</th>          
+            </tr>            
+        </thead>
+        <tbody>            
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr>                
+                <td colspan="2" align="center" class="nama">Axel Haryanto</td>
+            </tr>
+        </tbody>
+    </table>  
 </body>
 </html>

@@ -68,6 +68,23 @@
                 <td>{{ $take_away }}</td>
             </tr>
         </tbody>
-    </table>    
+    </table>
+    <table align="right" class="table table-sm table-borderless w-auto">
+        <thead>
+            <tr>
+                <th>Purwokerto,</th>                
+                <th>{{ $tanggal_now }}</th>          
+            </tr>            
+        </thead>
+        <tbody>            
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr>                
+                <td colspan="2" align="center" class="nama">Axel Haryanto</td>
+            </tr>
+        </tbody>
+    </table>  
 </body>
 </html>

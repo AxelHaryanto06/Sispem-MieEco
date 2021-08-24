@@ -223,9 +223,9 @@ class PesanController extends Controller
             $query->where('status_bayar', '=', 1);
             })->where('id_layanan', 2)->whereBetween('tanggal',[$tglawal, $tglakhir])->count();
                 
-        // dd("From : ".$tglawal, "To : ".$tglakhir);
+        $tanggal_now = Carbon::now()->format('d-m-Y');
 
-        $pdf = PDF::loadview('admin.laporanpenjualan',['laporanpenjualan'=>$data_pesanan], compact('data_pesanan','dine_in','take_away','tglawal','tglakhir'));
+        $pdf = PDF::loadview('admin.laporanpenjualan',['laporanpenjualan'=>$data_pesanan], compact('data_pesanan','dine_in','take_away','tglawal','tglakhir','tanggal_now'));
         return $pdf->stream();
     }
 
@@ -242,8 +242,10 @@ class PesanController extends Controller
                 $query2->where('status_bayar', '=', 1);
             })->whereBetween('tanggal',[$tglawal, $tglakhir]);
         })->with('menu')->orderBy('jumlah', 'DESC')->first();
-        
-        $pdf = PDF::loadview('admin.laporanpemesanan',['laporanpemesanan'=>$data_pesanan], compact('data_pesanan','tglawal','tglakhir','menu_terbanyak'));
+
+        $tanggal_now = Carbon::now()->format('d-m-Y');
+
+        $pdf = PDF::loadview('admin.laporanpemesanan',['laporanpemesanan'=>$data_pesanan], compact('data_pesanan','tglawal','tglakhir','menu_terbanyak','tanggal_now'));
         return $pdf->download('laporan-pemesanan');
     }
 }
