@@ -64,6 +64,7 @@ li {
 
 .navigation-text{
     background-color: #FEC921;
+    z-index: 999;
 }
 
 .navbar-text{
@@ -134,6 +135,7 @@ li {
 
 .image-right{
     width: 733px;
+    padding: 30px;
 }
 
 .css-2{
@@ -646,4 +648,85 @@ div.text-subtotal-mieeco{
     border-radius: 0 !important;
     background-color: #3c8dbc;
     color: white;
+}
+
+.home-gambar{
+    width: 100%;
+    height: auto;
+}
+
+.logo-mieeco{
+    display: none;
+}
+
+.modal-backdrop{
+    z-index: 0 !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .logo-mieeco{
+        display: table;
+        text-align: center;
+        margin-left: 30px;
+    }
+
+    .image-right{
+        width: 100% !important;
+    }
+    
+    .login-position{
+        margin-left: 0 !important;
+    }
+
+    .form-login{
+        padding: 0 !important;
+    }
+
+    .input-email,
+    .input-password,
+    .btn-submit{
+        width: 100%;
+    }
+
+    .btn-submit{
+        margin-left: 0 !important;
+    }
+
+    .tulisan{
+        margin-top: 100px !important;
+        text-align: center;
+    }
+
+    .box-left{
+        display: none;
+    }
+
+    .tulisan-login{
+        padding: 0;
+        margin-top: 20px !important;
+        text-align: center;
+    }
+
+    .belumpunya{
+        /* text-align: left !important; */
+        margin-left: 0 !important;
+    }
+
+    .register-image-right{
+        padding: 30px;
+        width: 100%;
+        overflow-y: scroll;
+    }
+
+    .tulisan-register{
+        margin-top: 20px !important;
+    }
+
+    .form-register{
+        margin-top: 20px;
+    }
+
+    .text-md-left{
+        margin-left: 0 !important;
+    }
 }

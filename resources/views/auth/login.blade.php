@@ -22,64 +22,65 @@
         </figure>    
     </div>
     <div class="box-right image-right">
-        <div class="col-md-12 tulisan-login">
-            <p>Login</p>
-        </div>
-        <div class="col-md-12">
-        <form method="POST" action="{{ route('login') }}">
-        @csrf
+        <a href="{{ url('/') }}">
+            <img src="/img/mie-eco-black.png" class="logo-mieeco" alt="Logo Mie Eco Black Outline">            
+        </a>
+        <div class="col-md-12 tulisan-login">Login</div>
+        <div class="col-md-12 form-login">
+            <form method="POST" action="{{ route('login') }}">
+            @csrf
 
-        <div class="form-group login-position">
-            <label class="perintah">Email</label>                    
-            <input id="email" type="email" class="form-control form-size @error('email') is-invalid @enderror" name="email" placeholder="Email Lengkap Anda" value="{{ old('email') }}" required autocomplete="email" autofocus>
-            @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror            
-        </div>
+            <div class="form-group login-position">
+                <label class="perintah">Email</label>                    
+                <input id="email" type="email" class="form-control form-size input-email @error('email') is-invalid @enderror" name="email" placeholder="Email Lengkap Anda" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror            
+            </div>
 
-        <div class="form-group login-position">
-            <label class="perintah">Password</label>                            
-            <input id="password" type="password" class="form-control form-size @error('password') is-invalid @enderror" name="password" placeholder="Masukkan Password Anda" required autocomplete="current-password">
-            @error('password')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror                            
-        </div>
+            <div class="form-group login-position">
+                <label class="perintah">Password</label>                            
+                <input id="password" type="password" class="form-control form-size input-password @error('password') is-invalid @enderror" name="password" placeholder="Masukkan Password Anda" required autocomplete="current-password">
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror                            
+            </div>
 
-        <div class="form-group row check-login-position">                            
-            <div class="form-check">
-                <input class="form-check-input" type="hidden" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                    {{-- <label class="form-check-label" type="hidden" for="remember">
-                        {{ __('Remember Me') }}
-                    </label> --}}
-            </div>                            
-        </div>
+            <div class="form-group row check-login-position">                            
+                <div class="form-check">
+                    <input class="form-check-input" type="hidden" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                        {{-- <label class="form-check-label" type="hidden" for="remember">
+                            {{ __('Remember Me') }}
+                        </label> --}}
+                </div>                            
+            </div>
 
-        <div class="form-group mb-0">                            
-            <button type="submit" class="btn btn-primary btn-submit">
-                {{ __('Login') }}
-            </button>
-            {{-- @if (Route::has('password.request'))
-            <div class="row">
-                <div class="col-md-12 text-forgot">
-                    <a class="btn btn-link btn-forgot" href="{{ route('password.request') }}">
-                        {{ __('Forgot Your Password?') }}
-                    </a>
+            <div class="form-group mb-0">                            
+                <button type="submit" class="btn btn-primary btn-submit">
+                    {{ __('Login') }}
+                </button>
+                {{-- @if (Route::has('password.request'))
+                <div class="row">
+                    <div class="col-md-12 text-forgot">
+                        <a class="btn btn-link btn-forgot" href="{{ route('password.request') }}">
+                            {{ __('Forgot Your Password?') }}
+                        </a>
+                    </div>
+                </div>
+                @endif                             --}}
+            </div>
+            </form>
+            <div class="toregister">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="belumpunya mt-4">Belum punya akun ?<a class="linktoregister" href="{{ url('register') }}"> Register</a></p>
+                    </div>
                 </div>
             </div>
-            @endif                             --}}
-        </div>
-        </form>
-        <div class="toregister">
-            <div class="row">
-                <div class="col-md-12">
-                    <p class="belumpunya mt-4">Belum punya akun ?<a class="linktoregister" href="{{ url('register') }}"> Register</a></p>
-                </div>
-            </div>
-        </div>
         </div>
     </div>
     </div>

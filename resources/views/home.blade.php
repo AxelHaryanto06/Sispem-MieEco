@@ -4,7 +4,7 @@
     <section class="home-atas">
         <div class="container">
             <div class="row">
-                <div class="col span_1_of_2">
+                <div class="col-md-6">
                     <h1 class="tulisan">
                         Mie Enak, Sehat, dan<br> 
                         Harga Terjangkau
@@ -13,9 +13,9 @@
                         Ayo segera pilih dan pesan mie favoritmu
                     </div>
                 </div>
-                <div class="col span_1_of_2">
+                <div class="col-md-6">
                     <figure class="gambarhome">
-                        <img src="/img/Eating together-pana.svg" alt="">
+                        <img src="/img/Eating together-pana.svg" width="600" height="400" class="home-gambar" alt="">
                     </figure>
                 </div>
             </div>            

@@ -22,9 +22,10 @@
             </figure>
         </div>
         <div class="box-right register-image-right">
-            <div class="col-md-12 tulisan-register">
-                <p>Register</p>
-            </div>
+            <a href="{{ url('/') }}">
+                <img src="/img/mie-eco-black.png" class="logo-mieeco" alt="Logo Mie Eco Black Outline">            
+            </a>
+            <div class="col-md-12 tulisan-register">Register</div>
             <div class="col-md-12 form-register">
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
