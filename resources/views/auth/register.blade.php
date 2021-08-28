@@ -101,7 +101,7 @@
                         <label for="telepon" class="col-md-3 col-form-label text-md-left perintah">{{ __('Telepon') }}</label>
 
                         <div class="col-md-6">
-                            <input id="telepon" type="text" class="form-control @error('telepon') is-invalid @enderror" name="telepon" placeholder="Masukkan Nomor Anda" value="{{ old('telepon') }}" required autocomplete="telepon">
+                            <input id="no_hp" type="text" class="form-control @error('telepon') is-invalid @enderror" name="no_hp" placeholder="Masukkan Nomor Anda" pattern="^[0-9]{9,13}$" value="{{ old('no_hp') }}" required autocomplete="no_hp">
 
                             @error('telepon')
                                 <span class="invalid-feedback" role="alert">
