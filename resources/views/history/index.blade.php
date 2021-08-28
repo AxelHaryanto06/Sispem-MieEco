@@ -15,41 +15,45 @@
                 <div class="container main">
                     <h5><i class="fas fa-history"></i> Riwayat Pemesanan</h5>
                     <div class="alert alert-warning order-announcement mt-2" role="alert">
-                        Pemesanan dengan status Belum Dibayar tidak akan dilakukan pembuatan
+                        *Pemesanan dengan status Belum Dibayar tidak akan diproses <br>
+                        *Silakan unggah bukti pembayaran pesanan Anda dengan klik Detail
+
                     </div>
-                    <table class="table table-striped mt-2">
-                        <thead>
-                            <tr>                            
-                                <th>No</th>
-                                <th>Tanggal</th>
-                                <th>Status</th>
-                                <th>Total</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>                            
-                        @php
-                            $no = 1
-                        @endphp
-                        @foreach ($pesanans as $pesanan)
-                            <tr>
-                                <td>{{ $no++ }}</td>
-                                <td>{{ $pesanan->tanggal }}</td>
-                                <td>
-                                    @if ($pesanan->pembayaran[0]->status_bayar == "1")
-                                        Sudah Dibayar
-                                    @else
-                                        Belum Dibayar
-                                    @endif
-                                </td>
-                                <td>Rp. {{ number_format($pesanan->total) }}</td>
-                                <td>
-                                    <a href="{{ url('history') }}/{{ $pesanan->id }}" class="btn btn-primary">Detail</a>
-                                </td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table class="table table-striped mt-2">
+                            <thead>
+                                <tr>                            
+                                    <th>No</th>
+                                    <th>Tanggal</th>
+                                    <th>Status</th>
+                                    <th>Total</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>                            
+                            @php
+                                $no = 1
+                            @endphp
+                            @foreach ($pesanans as $pesanan)
+                                <tr>
+                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $pesanan->tanggal }}</td>
+                                    <td>
+                                        @if ($pesanan->pembayaran[0]->status_bayar == "1")
+                                            Sudah Dibayar
+                                        @else
+                                            Belum Dibayar
+                                        @endif
+                                    </td>
+                                    <td>Rp. {{ number_format($pesanan->total) }}</td>
+                                    <td>
+                                        <a href="{{ url('history') }}/{{ $pesanan->id }}" class="btn btn-primary">Detail</a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

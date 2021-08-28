@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-12 mb-3 text-center">
                 <div class="logo">
-                    <a href="/" class="logo-mieeco">
+                    <a href="/">
                         <img src="/img/mieeco2 2.svg" alt="">
                     </a>
                 </div>

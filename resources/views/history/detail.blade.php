@@ -17,7 +17,7 @@
                     <h5><i class="fas fa-shopping-cart"></i> Detail Pemesanan</h5>                
                     @if (!empty($pesanan))
                     <a href="{{ url('/history/bukti_pesan') }}/{{ $pesanan->id }}" class="btn btn-primary btn-cetak mt-3" target="_blank">Cetak Bukti Pesan</a>
-                    <div align="right" class="mt-4">
+                    <div align="right" class="table-responsive mt-4">
                         <table class="table table-sm table-borderless w-auto">
                             <tbody>
                                 <tr>
@@ -42,41 +42,43 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>                    
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr class="table-active">                            
-                                <th class="cart-page-menu">Menu</th>
-                                <th class="th-menu">Kuantitas</th>
-                                <th class="th-menu">Harga</th>
-                                <th class="th-menu">Jumlah Harga</th>                            
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($detail_pesanans as $detail_pesanan)
-                            <tr>                           
-                                <td>
-                                    <div class="col-md-12 cart-page-namamenu">
-                                        {{ $detail_pesanan->menu->nama_menu }}
-                                    </div>                                
-                                    <div class="col-md-12 cart-page-catatan mt-2">
-                                        <i>{{ $detail_pesanan->catatan }}</i>
-                                    </div>                                
-                                </td>
-                                <td style="text-align: center">{{ $detail_pesanan->jumlah }}</td>
-                                <td align="left">Rp. {{ number_format($detail_pesanan->menu->harga) }}</td>
-                                <td align="left">Rp. {{ number_format($detail_pesanan->jml_harga) }}</td>                            
-                            </tr>                            
-                            @endforeach
-                            <tr>
-                                <td colspan="3" align="right"><strong>Total Harga :</strong></td>
-                                <td><strong>Rp. {{ number_format($pesanan->total) }}</strong></td>                            
-                            </tr>
-                            <tr>
-                                
-                            </tr>
-                        </tbody>
-                    </table>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr class="table-active">                            
+                                    <th class="cart-page-menu">Menu</th>
+                                    <th class="th-menu">Kuantitas</th>
+                                    <th class="th-menu">Harga</th>
+                                    <th class="th-menu">Jumlah Harga</th>                            
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($detail_pesanans as $detail_pesanan)
+                                <tr>                           
+                                    <td>
+                                        <div class="col-md-12 cart-page-namamenu">
+                                            {{ $detail_pesanan->menu->nama_menu }}
+                                        </div>                                
+                                        <div class="col-md-12 cart-page-catatan mt-2">
+                                            <i>{{ $detail_pesanan->catatan }}</i>
+                                        </div>                                
+                                    </td>
+                                    <td style="text-align: center">{{ $detail_pesanan->jumlah }}</td>
+                                    <td align="left">Rp. {{ number_format($detail_pesanan->menu->harga) }}</td>
+                                    <td align="left">Rp. {{ number_format($detail_pesanan->jml_harga) }}</td>                            
+                                </tr>                            
+                                @endforeach
+                                <tr>
+                                    <td colspan="3" align="right"><strong>Total Harga :</strong></td>
+                                    <td><strong>Rp. {{ number_format($pesanan->total) }}</strong></td>                            
+                                </tr>
+                                <tr>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>                    
+                    </div>                
                     @endif
                     <div class="card mt-5">
                         <div class="card-header">

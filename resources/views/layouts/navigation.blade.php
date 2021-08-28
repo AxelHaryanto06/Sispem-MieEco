@@ -99,7 +99,7 @@
                                             </div>
                                             <div class="show-cart">
                                               <div class="card card-rounded mb-3">
-                                                <div class="cart-body">
+                                                <div class="cart-body table-responsive">
                                                   <table class="table table-borderless">
                                                     <thead>
                                                         <tr>                            

@@ -14,7 +14,7 @@
                             <p class="text-mieeco-red">{{ $pesanan->layanan->jenis }}</p>
                         </div>
                     </div>
-                    <div class="col-12 mt-4">
+                    <div class="col-12 mt-4 table-responsive">
                         <table class="table">
                             <thead class="thead-light">
                                 <tr>

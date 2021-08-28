@@ -729,4 +729,8 @@ div.text-subtotal-mieeco{
     .text-md-left{
         margin-left: 0 !important;
     }
+
+    .grab-food{
+        margin-left: 10px !important;
+    }
 }

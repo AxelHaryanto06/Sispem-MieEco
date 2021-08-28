@@ -2,7 +2,7 @@
 <?php
   $dt = \App\User::where('id',\Auth::user()->id)->first();
 ?>
-<a href="../../index2.html" class="logo">
+<a href="/admin/dashboard" class="logo">
   <!-- mini logo for sidebar mini 50x50 pixels -->
   <span class="logo-mini"><b>A</b>LT</span>
   <!-- logo for regular state and mobile devices -->
@@ -26,7 +26,7 @@
       <!-- User Account: style can be found in dropdown.less -->
       
 
-      <li class="dropdown notifications-menu">
+      {{-- <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
               <span class="label label-warning">0</span>
@@ -45,7 +45,7 @@
               </li>
               <li class="footer"><a href="{{ url('jadwal-reservasi') }}">View all</a></li>
             </ul>
-          </li>
+          </li> --}}
 
       <li class="dropdown user user-menu">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
