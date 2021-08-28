@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2021 at 02:45 PM
+-- Generation Time: Aug 28, 2021 at 11:01 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -63,7 +63,7 @@ INSERT INTO `detail_pesanans` (`id`, `id_menu`, `id_pesanan`, `jumlah`, `catatan
 (52, 1, 15, 5, NULL, 90000, '2021-05-29 05:48:07', '2021-05-29 05:48:07'),
 (54, 2, 16, 2, NULL, 30000, '2021-06-04 04:13:01', '2021-06-04 04:13:01'),
 (55, 24, 17, 1, NULL, 3000, '2021-06-04 05:35:39', '2021-06-04 05:35:39'),
-(56, 23, 18, 10, NULL, 70000, '2021-06-04 05:48:32', '2021-06-04 05:48:32'),
+(56, 23, 18, 0, NULL, 0, '2021-06-04 05:48:32', '2021-06-04 05:48:32'),
 (57, 2, 19, 10, NULL, 150000, '2021-06-04 06:10:11', '2021-06-04 06:10:11'),
 (58, 1, 40, 20, NULL, 360000, '2021-06-04 06:13:49', '2021-06-04 06:13:49'),
 (59, 1, 41, 10, 'kuah banyak', 180000, '2021-06-04 06:19:00', '2021-06-04 06:19:00'),
@@ -84,7 +84,19 @@ INSERT INTO `detail_pesanans` (`id`, `id_menu`, `id_pesanan`, `jumlah`, `catatan
 (113, 27, 64, 5, 'dddd', 50500, '2021-06-28 04:15:17', '2021-06-28 04:15:17'),
 (114, 3, 65, 5, NULL, 80000, '2021-06-30 06:30:17', '2021-06-30 06:30:17'),
 (115, 24, 65, 2, NULL, 6000, '2021-06-30 06:30:35', '2021-06-30 06:30:35'),
-(116, 22, 65, 3, NULL, 9000, '2021-06-30 06:30:58', '2021-06-30 06:30:58');
+(116, 22, 65, 3, NULL, 9000, '2021-06-30 06:30:58', '2021-06-30 06:30:58'),
+(117, 2, 66, 2, NULL, 30000, '2021-07-15 05:41:46', '2021-07-15 05:41:46'),
+(118, 24, 66, 2, NULL, 6000, '2021-07-15 05:41:59', '2021-07-15 05:41:59'),
+(121, 1, 68, 2, NULL, 36000, '2021-07-15 07:12:57', '2021-07-15 07:12:57'),
+(122, 22, 68, 2, NULL, 6000, '2021-07-15 07:13:07', '2021-07-15 07:13:07'),
+(123, 2, 69, 2, NULL, 30000, '2021-08-11 03:59:57', '2021-08-11 03:59:57'),
+(124, 1, 70, 5, 'kuah banyakan', 90000, '2021-08-21 02:52:32', '2021-08-21 02:52:32'),
+(125, 24, 70, 5, 'ga dingin', 15000, '2021-08-21 02:52:56', '2021-08-21 02:52:56'),
+(126, 22, 71, 5, '1 es banyak', 15000, '2021-08-23 02:40:11', '2021-08-23 02:40:11'),
+(128, 23, 71, 5, NULL, 35000, '2021-08-23 02:41:14', '2021-08-23 02:41:14'),
+(129, 1, 72, 6, 'minta kuah tambahan', 108000, '2021-08-23 20:26:16', '2021-08-23 20:26:16'),
+(131, 2, 73, 5, NULL, 75000, '2021-08-25 07:22:28', '2021-08-25 07:22:28'),
+(132, 23, 74, 1, NULL, 7000, '2021-08-27 00:25:09', '2021-08-27 00:25:09');
 
 -- --------------------------------------------------------
 
@@ -167,16 +179,18 @@ INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
 CREATE TABLE `pelayanan` (
   `id` int(11) UNSIGNED NOT NULL,
   `jenis` varchar(255) NOT NULL,
-  `icon` varchar(255) DEFAULT NULL
+  `icon` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pelayanan`
 --
 
-INSERT INTO `pelayanan` (`id`, `jenis`, `icon`) VALUES
-(1, 'Dine in', 'dine in_1.png'),
-(2, 'Take Away', 'take away_2.png');
+INSERT INTO `pelayanan` (`id`, `jenis`, `icon`, `created_at`, `updated_at`) VALUES
+(1, 'Dine in', 'dine in_1.png', NULL, NULL),
+(2, 'Take Away', 'take away_2.png', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -226,7 +240,15 @@ INSERT INTO `pembayarans` (`id`, `id_user`, `id_pesanan`, `bukti_foto`, `status_
 (26, 2, 51, NULL, '1', '2021-06-05 02:17:20', '2021-06-05 02:17:20'),
 (47, 2, 60, NULL, '0', '2021-06-23 08:47:24', '2021-06-23 08:47:24'),
 (48, 2, 64, '1624978741.png', '0', '2021-06-28 04:14:45', '2021-06-29 07:59:01'),
-(49, 4, 65, NULL, '0', '2021-06-30 06:30:18', '2021-06-30 06:30:18');
+(49, 4, 65, NULL, '0', '2021-06-30 06:30:18', '2021-06-30 06:30:18'),
+(50, 23, 66, NULL, '0', '2021-07-15 05:41:46', '2021-07-15 05:41:46'),
+(52, 23, 68, NULL, '0', '2021-07-15 07:12:58', '2021-07-15 07:12:58'),
+(53, 23, 69, NULL, '0', '2021-08-11 03:59:57', '2021-08-11 03:59:57'),
+(54, 23, 70, '1629554495.png', '1', '2021-08-21 02:52:32', '2021-08-21 07:46:47'),
+(55, 26, 71, '1629724358.png', '0', '2021-08-23 02:40:11', '2021-08-23 06:12:38'),
+(56, 27, 72, '1629775844.png', '1', '2021-08-23 20:26:17', '2021-08-23 20:45:12'),
+(57, 23, 73, NULL, '0', '2021-08-25 07:22:29', '2021-08-25 07:22:29'),
+(58, 2, 74, NULL, '0', '2021-08-27 00:25:10', '2021-08-27 00:25:10');
 
 -- --------------------------------------------------------
 
@@ -272,7 +294,15 @@ INSERT INTO `pesanans` (`id`, `id_user`, `tanggal`, `jam`, `status`, `total`, `i
 (51, 2, '2021-06-05', NULL, '1', 38000, 1, '2021-06-05 02:01:06', '2021-06-05 02:17:35'),
 (60, 2, '2021-06-23', NULL, '1', 15000, 1, '2021-06-23 08:40:28', '2021-06-23 04:14:05'),
 (64, 2, '2021-06-28', '18:15:00', '1', 155500, 1, '2021-06-28 04:14:22', '2021-06-28 04:15:42'),
-(65, 4, '2021-06-30', '19:31:00', '1', 95000, 1, '2021-06-30 06:30:03', '2021-06-30 06:38:50');
+(65, 4, '2021-06-30', '19:31:00', '1', 95000, 1, '2021-06-30 06:30:03', '2021-06-30 06:38:50'),
+(66, 23, '2021-07-15', '19:42:00', '1', 36000, 2, '2021-07-15 05:41:26', '2021-07-15 05:43:13'),
+(68, 23, '2021-07-15', '20:13:00', '1', 42000, 1, '2021-07-15 07:12:50', '2021-07-15 07:13:20'),
+(69, 23, '2021-08-11', '19:32:00', '1', 30000, 2, '2021-08-11 03:59:24', '2021-08-11 06:39:24'),
+(70, 23, '2021-08-21', '19:45:00', '1', 105000, 2, '2021-08-21 02:51:48', '2021-08-21 06:20:47'),
+(71, 26, '2021-08-23', '15:13:00', '1', 50000, 2, '2021-08-23 02:39:40', '2021-08-23 03:43:34'),
+(72, 27, '2021-08-24', '10:58:00', '1', 108000, 2, '2021-08-23 20:25:01', '2021-08-23 20:29:22'),
+(73, 23, '2021-08-25', '15:24:00', '1', 75000, 1, '2021-08-25 07:21:50', '2021-08-25 07:54:46'),
+(74, 2, '2021-08-27', '14:57:00', '1', 7000, 1, '2021-08-27 00:24:42', '2021-08-27 00:27:40');
 
 -- --------------------------------------------------------
 
@@ -313,27 +343,32 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `role`, `email_verified_at`, `password`, `tgl_lahir`, `jenkel`, `alamat`, `no_hp`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Axel', 'axel@gmail.com', 'user', '2020-10-19 19:37:55', '123456', '1998-10-06', 'Laki-Laki', 'Puri Indah K-42', '0821289289389', NULL, NULL, NULL),
-(2, 'Axel', 'axelh@gmail.com', 'user', NULL, '$2y$10$SOoT/ZXsz76gs4gez0r/YO2Vi939P49T/fS0Icim6kON1CgJUCcDO', '1998-10-06', 'Laki - Laki', 'Purwokerto', '337343423423', 'ViOADnbRspulIlCi54KUeMqtUfEz8bxZIql5CWDOoW5IYf9nEpQka6bZNfxr', '2020-10-20 10:21:58', '2020-11-30 03:34:53'),
+(2, 'Axel', 'axelh@gmail.com', 'user', NULL, '$2y$10$SOoT/ZXsz76gs4gez0r/YO2Vi939P49T/fS0Icim6kON1CgJUCcDO', '1998-10-06', 'Laki - Laki', 'Purwokerto', '337343423423', 'gmsNN2T61pkb21JriPr7htpQn1BIUJzAoawXwDViY7EeTxZimE32CPxN9dC0', '2020-10-20 10:21:58', '2020-11-30 03:34:53'),
 (3, 'admin', 'admin@mieeco.com', 'admin', NULL, '$2y$10$SnBxHRWKZJE.xUcrj4NR1u.6kfHiKqAvJkSM/m.1ouZM2MOztT6rC', NULL, NULL, NULL, NULL, NULL, '2020-10-26 08:02:29', '2020-10-26 08:02:29'),
 (4, 'adriel', 'adriel@gmail.com', 'user', NULL, '$2y$10$wiCKHRSzfPV36/620Eo8mu9IUSbV0GileHvPwzXBXOnSOz./95oY.', NULL, NULL, NULL, NULL, NULL, '2020-10-26 10:54:36', '2020-10-26 10:54:36'),
-(5, 'agus', 'agus@gmail.com', NULL, NULL, '$2y$10$XBHUSU03ll4ilLNeGPV/QO9/l4.4Pi3yhhfkgyMkhMrlOVrEe8o8K', NULL, NULL, NULL, NULL, 'EpisRQ0fBtRrSOBtwCU0PfwfjbPImLozc0NN4NO4f5eTAmsA5bWjaIKQDSJ7', '2020-10-28 00:56:53', '2020-10-28 00:56:53'),
-(6, 'dewi', 'dewi@gmail.com', NULL, NULL, '$2y$10$slhT5LThoEtI6Oxl2LZBu.gzBbj7X1nUHtUIQAPe2be.ERW1yBLkG', NULL, NULL, NULL, NULL, NULL, '2020-10-28 01:36:07', '2020-10-28 01:36:07'),
-(7, 'dono', 'dono@gmail.com', NULL, NULL, '$2y$10$w50TVgIHsPS3HysyVfzqO.jFtduGyvhUs14fs9SsexQY57yB27AxO', NULL, NULL, NULL, NULL, NULL, '2020-11-04 11:27:23', '2020-11-04 11:27:23'),
-(8, 'kezia', 'kezia@gmail.com', NULL, NULL, '$2y$10$.YyMABYtvsX788uSJ23TLuBpgPOblosEn2/qn3MWOoGdoCMs8d24e', NULL, NULL, NULL, NULL, NULL, '2020-11-09 04:04:21', '2020-11-09 04:04:21'),
-(9, 'unyu', 'unyu@gmail.com', NULL, NULL, '$2y$10$2M75e6MHoHZJ46KfM0GdfOq8RUqvDJyt0yxccyzIoZl0iwonVgNPq', NULL, NULL, NULL, NULL, NULL, '2020-11-10 07:42:08', '2020-11-10 07:42:08'),
-(10, 'unyuin', 'unyuin@gmail.com', NULL, NULL, '$2y$10$BCZLCXjlXVvy/MQSk.fLTOoTlbyF61UqNRE9bUAoETfqGgWzPJA92', NULL, NULL, NULL, '082147547747', NULL, '2020-11-10 07:46:37', '2020-11-10 07:46:37'),
-(11, 'unyu2', 'unyu2@gmail.com', NULL, NULL, '$2y$10$loMKAUgAsJP4HP/Y/nTNUuG1neFS0ElkTsNEhAWSO6yM2AaWkCrVO', NULL, 'Laki - Laki', NULL, '038493849334', NULL, '2020-11-10 08:59:36', '2020-11-10 08:59:36'),
-(12, 'unyu3', 'unyu3@gmail.com', NULL, NULL, '$2y$10$0Xx81o4IeudfMEzuZ0TCMujSG/muphwwQXlBmgnqCs9vkSigmNe96', NULL, 'Perempuan', NULL, '0839843433', NULL, '2020-11-10 09:00:39', '2020-11-10 09:00:39'),
-(13, 'jimny', 'jimny@gmail.com', NULL, NULL, '$2y$10$xYHZqW9sgxtZX0et5uj2puz7uRaXn1HTtL.84DhC0rg.6AR6nWIam', NULL, 'Laki - Laki', NULL, '04484843742', NULL, '2020-11-10 09:31:58', '2020-11-10 09:31:58'),
-(14, 'aman', 'aman@gmail.com', NULL, NULL, '$2y$10$U/2hqmgXpJVvJzedvKKosO./lZTCld3xnMLsncPT66/OMIbxYbtt.', NULL, 'Laki - Laki', NULL, '0989489343', NULL, '2020-11-11 03:22:10', '2020-11-11 03:22:10'),
-(15, 'aman1', 'aman1@gmail.com', NULL, NULL, '$2y$10$3SZ5cSCiW1dsV4lTw8QN7eebqNVplvjWsGhm725mZAxx6Isq2iPs6', NULL, 'Laki - Laki', NULL, '08984599898', NULL, '2020-11-11 03:33:42', '2020-11-11 03:33:42'),
-(16, 'user', 'user@gmail.com', NULL, NULL, '$2y$10$ekQ9XuWno3PBHjh.cM/TPe7rueSRY4eVixljQzjPYUhUkQMomaXEG', '1999-10-06', 'Laki - Laki', NULL, '03984984349', NULL, '2020-11-11 03:45:38', '2020-11-11 03:45:38'),
-(17, 'pradana', 'pradana@gmail.com', NULL, NULL, '$2y$10$dcBJ4pmywKQ4YnhEYPo.oum5BBbwP2H9kw6eKmyMZkQSaapiTc1w.', '2020-12-31', 'Laki - Laki', NULL, '1231232132321', NULL, '2021-01-20 19:29:26', '2021-01-20 19:29:26'),
-(18, 'beni', 'beni@gmail.com', NULL, NULL, '$2y$10$cTSouJk.dvLcZO9Ux5zJY.lj2Lk2nH8snxJAg5q66hM4CeG9cA3CG', '2020-12-30', 'Laki - Laki', NULL, '1234567891', NULL, '2021-01-20 19:52:11', '2021-01-20 19:52:11'),
-(19, 'Dedy Vandy', 'dedy@gmail.com', NULL, NULL, '$2y$10$svoVhuLW8Qb3gZj37TE/ze6gkxgtboLhD0mvD5ig2FNOx7OyeOvlO', '1998-06-06', 'Laki - Laki', NULL, '43534534535', NULL, '2021-06-29 09:01:48', '2021-06-29 09:01:48'),
-(20, 'ridwan', 'ridwan@gmail.com', NULL, NULL, '$2y$10$luSOwVZT6dm7egAnVX7t/eDiER2PF2KdEoDgIUQuhUkUqxYtVXKwe', '1996-06-02', 'Laki - Laki', NULL, '8768726481', NULL, '2021-06-29 22:34:59', '2021-06-29 22:34:59'),
-(21, 'ayep', 'ayep@gmail.com', NULL, NULL, '$2y$10$kCAou44EbzuqBe6pTCQjMO7tajEZ9kyDGfHkViW7qpHEAex9A7iSi', '1880-10-17', 'Laki - Laki', NULL, '1234567892', NULL, '2021-06-29 22:47:13', '2021-06-29 22:47:13'),
-(22, 'ayes', 'ayes@gmail.com', 'user', NULL, '$2y$10$6gaGpr/WNC.WIvbj4rR6PenPNjpHyY8S8g5tRucWErLtfGglofEUS', '1992-12-08', 'Laki - Laki', NULL, '9485372903', NULL, '2021-06-29 23:13:40', '2021-06-29 23:13:40');
+(5, 'agus', 'agus@gmail.com', 'user', NULL, '$2y$10$XBHUSU03ll4ilLNeGPV/QO9/l4.4Pi3yhhfkgyMkhMrlOVrEe8o8K', NULL, NULL, NULL, NULL, 'EpisRQ0fBtRrSOBtwCU0PfwfjbPImLozc0NN4NO4f5eTAmsA5bWjaIKQDSJ7', '2020-10-28 00:56:53', '2020-10-28 00:56:53'),
+(6, 'dewi', 'dewi@gmail.com', 'user', NULL, '$2y$10$slhT5LThoEtI6Oxl2LZBu.gzBbj7X1nUHtUIQAPe2be.ERW1yBLkG', NULL, NULL, NULL, NULL, NULL, '2020-10-28 01:36:07', '2020-10-28 01:36:07'),
+(7, 'dono', 'dono@gmail.com', 'user', NULL, '$2y$10$w50TVgIHsPS3HysyVfzqO.jFtduGyvhUs14fs9SsexQY57yB27AxO', NULL, NULL, NULL, NULL, NULL, '2020-11-04 11:27:23', '2020-11-04 11:27:23'),
+(8, 'kezia', 'kezia@gmail.com', 'user', NULL, '$2y$10$.YyMABYtvsX788uSJ23TLuBpgPOblosEn2/qn3MWOoGdoCMs8d24e', NULL, NULL, NULL, NULL, NULL, '2020-11-09 04:04:21', '2020-11-09 04:04:21'),
+(9, 'unyu', 'unyu@gmail.com', 'user', NULL, '$2y$10$2M75e6MHoHZJ46KfM0GdfOq8RUqvDJyt0yxccyzIoZl0iwonVgNPq', NULL, NULL, NULL, NULL, NULL, '2020-11-10 07:42:08', '2020-11-10 07:42:08'),
+(10, 'unyuin', 'unyuin@gmail.com', 'user', NULL, '$2y$10$BCZLCXjlXVvy/MQSk.fLTOoTlbyF61UqNRE9bUAoETfqGgWzPJA92', NULL, NULL, NULL, '082147547747', NULL, '2020-11-10 07:46:37', '2020-11-10 07:46:37'),
+(11, 'unyu2', 'unyu2@gmail.com', 'user', NULL, '$2y$10$loMKAUgAsJP4HP/Y/nTNUuG1neFS0ElkTsNEhAWSO6yM2AaWkCrVO', NULL, 'Laki - Laki', NULL, '038493849334', NULL, '2020-11-10 08:59:36', '2020-11-10 08:59:36'),
+(12, 'unyu3', 'unyu3@gmail.com', 'user', NULL, '$2y$10$0Xx81o4IeudfMEzuZ0TCMujSG/muphwwQXlBmgnqCs9vkSigmNe96', NULL, 'Perempuan', NULL, '0839843433', NULL, '2020-11-10 09:00:39', '2020-11-10 09:00:39'),
+(13, 'jimny', 'jimny@gmail.com', 'user', NULL, '$2y$10$xYHZqW9sgxtZX0et5uj2puz7uRaXn1HTtL.84DhC0rg.6AR6nWIam', NULL, 'Laki - Laki', NULL, '04484843742', NULL, '2020-11-10 09:31:58', '2020-11-10 09:31:58'),
+(14, 'aman', 'aman@gmail.com', 'user', NULL, '$2y$10$U/2hqmgXpJVvJzedvKKosO./lZTCld3xnMLsncPT66/OMIbxYbtt.', NULL, 'Laki - Laki', NULL, '0989489343', NULL, '2020-11-11 03:22:10', '2020-11-11 03:22:10'),
+(15, 'aman1', 'aman1@gmail.com', 'user', NULL, '$2y$10$3SZ5cSCiW1dsV4lTw8QN7eebqNVplvjWsGhm725mZAxx6Isq2iPs6', NULL, 'Laki - Laki', NULL, '08984599898', NULL, '2020-11-11 03:33:42', '2020-11-11 03:33:42'),
+(16, 'user', 'user@gmail.com', 'user', NULL, '$2y$10$ekQ9XuWno3PBHjh.cM/TPe7rueSRY4eVixljQzjPYUhUkQMomaXEG', '1999-10-06', 'Laki - Laki', NULL, '03984984349', NULL, '2020-11-11 03:45:38', '2020-11-11 03:45:38'),
+(17, 'pradana', 'pradana@gmail.com', 'user', NULL, '$2y$10$dcBJ4pmywKQ4YnhEYPo.oum5BBbwP2H9kw6eKmyMZkQSaapiTc1w.', '2020-12-31', 'Laki - Laki', NULL, '1231232132321', NULL, '2021-01-20 19:29:26', '2021-01-20 19:29:26'),
+(18, 'beni', 'beni@gmail.com', 'user', NULL, '$2y$10$cTSouJk.dvLcZO9Ux5zJY.lj2Lk2nH8snxJAg5q66hM4CeG9cA3CG', '2020-12-30', 'Laki - Laki', NULL, '1234567891', NULL, '2021-01-20 19:52:11', '2021-01-20 19:52:11'),
+(19, 'Dedy Vandy', 'dedy@gmail.com', 'user', NULL, '$2y$10$svoVhuLW8Qb3gZj37TE/ze6gkxgtboLhD0mvD5ig2FNOx7OyeOvlO', '1998-06-06', 'Laki - Laki', NULL, '43534534535', NULL, '2021-06-29 09:01:48', '2021-06-29 09:01:48'),
+(20, 'ridwan', 'ridwan@gmail.com', 'user', NULL, '$2y$10$luSOwVZT6dm7egAnVX7t/eDiER2PF2KdEoDgIUQuhUkUqxYtVXKwe', '1996-06-02', 'Laki - Laki', NULL, '8768726481', NULL, '2021-06-29 22:34:59', '2021-06-29 22:34:59'),
+(21, 'ayep', 'ayep@gmail.com', 'user', NULL, '$2y$10$kCAou44EbzuqBe6pTCQjMO7tajEZ9kyDGfHkViW7qpHEAex9A7iSi', '1880-10-17', 'Laki - Laki', NULL, '1234567892', NULL, '2021-06-29 22:47:13', '2021-06-29 22:47:13'),
+(22, 'ayes', 'ayes@gmail.com', 'user', NULL, '$2y$10$6gaGpr/WNC.WIvbj4rR6PenPNjpHyY8S8g5tRucWErLtfGglofEUS', '1992-12-08', 'Laki - Laki', NULL, '9485372903', NULL, '2021-06-29 23:13:40', '2021-06-29 23:13:40'),
+(23, 'awan', 'awan@gmail.com', 'user', NULL, '$2y$10$Tb9g1ooDDo2ZF90vDTuMEuoXBGEUStyzG2CBMCh/4BeXrM3NRxrV2', '1992-11-17', 'Laki - Laki', NULL, '9898387832', NULL, '2021-07-13 05:03:36', '2021-07-13 05:03:36'),
+(24, 'aman', 'narwan@gmail.com', 'user', NULL, '$2y$10$b/aZhmYLRzOdxppvDY1MieNeJZCjGmxWaUX17853JCXVHPdEHTHum', '2021-08-17', 'Laki - Laki', NULL, '1212121321231431', NULL, '2021-08-23 02:25:43', '2021-08-23 02:25:43'),
+(25, 'abcd', 'abcd@gmail.com', 'user', NULL, '$2y$10$Wq4Ei0YHUbcxil8xJf.hueAxMyxiewYaSMC27BT4Kb1Mq6AyvoVhq', '2021-08-23', 'Laki - Laki', NULL, 'asasasasdfsfsfsfdsfdsfsf', NULL, '2021-08-23 02:27:09', '2021-08-23 02:27:09'),
+(26, 'alan', 'alan@gmail.com', 'user', NULL, '$2y$10$5bDrrgj9SFiCWaBwvMPnU.rCg4TI13SaGw6MulK7jMEvMqkQjMvUS', '2021-08-23', 'Laki - Laki', NULL, NULL, NULL, '2021-08-23 02:37:13', '2021-08-23 02:37:13'),
+(27, 'rahman', 'rahman@gmail.com', 'user', NULL, '$2y$10$4EuV6hkiQj80OX77FYgxLeVPAAF6URaoX2IsyVvhDkH8owEfZlqcK', '2021-08-24', 'Laki - Laki', NULL, NULL, NULL, '2021-08-23 20:23:54', '2021-08-23 20:23:54');
 
 --
 -- Indexes for dumped tables
@@ -402,13 +437,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `detail_pesanans`
 --
 ALTER TABLE `detail_pesanans`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -420,19 +455,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `pelayanan`
 --
 ALTER TABLE `pelayanan`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pembayarans`
 --
 ALTER TABLE `pembayarans`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `pesanans`
 --
 ALTER TABLE `pesanans`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `tbl_role`
@@ -444,7 +479,7 @@ ALTER TABLE `tbl_role`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
